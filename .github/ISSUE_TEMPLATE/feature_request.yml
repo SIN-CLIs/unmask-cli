@@ -1,0 +1,34 @@
+name: Feature request
+description: Propose a new capability.
+title: "[feat] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user pain are we solving?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: dropdown
+    id: clone
+    attributes:
+      label: Is this a clone-and-combine candidate?
+      options: ["No", "Yes — code import", "Yes — idea only", "Unsure"]
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Upstream project (if clone)
+      placeholder: e.g. browser-use/browser-use (MIT)
