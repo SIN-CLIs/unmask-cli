@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sample Survey Dashboard</title>
+  <style>
+    body { font: 14px system-ui; margin: 24px; background: #fafafa; color: #111; }
+    .card { background: #fff; border: 1px solid #ddd; padding: 16px; margin-bottom: 12px; border-radius: 8px; }
+    button { padding: 8px 14px; border-radius: 6px; border: 1px solid #444; background: #fff; cursor: pointer; }
+    [data-testid="reward"] { font-weight: bold; color: #0a7d2e; }
+    .duration { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Available Surveys</h1>
+
+  <div class="card" data-survey-id="s-001">
+    <span data-testid="reward">€ 0,50</span>
+    <span class="duration">12 min</span>
+    <button data-testid="start" id="btn-001" aria-label="Start survey s-001">Start survey</button>
+  </div>
+
+  <div class="card" data-survey-id="s-002">
+    <span data-testid="reward">€ 1,20</span>
+    <span class="duration">18 min</span>
+    <button data-testid="start" id="btn-002" aria-label="Start survey s-002">Start survey</button>
+  </div>
+
+  <div class="card" data-survey-id="s-003">
+    <span data-testid="reward">€ 0,30</span>
+    <span class="duration">5 min</span>
+    <button data-testid="start" id="btn-003" aria-label="Start survey s-003">Start survey</button>
+  </div>
+
+  <script>
+    // Fire a fake API call so the network sniffer captures something.
+    fetch('/api/surveys?available=1', { headers: { 'x-test': 'fixture' } }).catch(() => {});
+    document.querySelectorAll('button[data-testid="start"]').forEach((b) => {
+      b.addEventListener('click', (e) => {
+        const id = e.target.id;
+        document.body.innerHTML = '<h1>Thank you for completing this survey</h1><p>Result: ' + id + '</p>';
+      });
+    });
+    console.log('[fixture] loaded survey dashboard');
+  </script>
+</body>
+</html>

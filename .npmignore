@@ -1,0 +1,13 @@
+src/
+tests/
+.github/
+*.test.ts
+tsconfig.json
+.eslintrc.cjs
+.prettierrc
+vitest.config.ts
+.unmask/
+state.json
+blacklist.json
+captures/
+screenshots/
