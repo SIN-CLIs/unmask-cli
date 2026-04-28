@@ -1,0 +1,52 @@
+name: Clone research
+description: Track research + import work for a competitor capability we want to clone.
+title: "[clone] "
+labels: [clone, research]
+body:
+  - type: input
+    id: upstream
+    attributes:
+      label: Upstream repo
+      placeholder: org/name
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+      placeholder: MIT / Apache-2.0 / GPL-3.0 / AGPL-3.0 / proprietary
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Clone mode (per COMPETITIVE_STRATEGY.md)
+      options:
+        - code-import (permissive license, vendored or extracted)
+        - idea-only (copyleft, reimplemented from spec)
+        - patch-watch (track upstream patches, e.g. CDP fingerprints)
+    validations:
+      required: true
+  - type: textarea
+    id: capability
+    attributes:
+      label: Capability we want
+    validations:
+      required: true
+  - type: textarea
+    id: integration
+    attributes:
+      label: Where it lands in our combine layer
+      placeholder: src/<package>/<file>, plugin, hook, ...
+    validations:
+      required: true
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done
+      value: |
+        - [ ] Upstream license & NOTICE recorded in THIRD_PARTY_NOTICES.md
+        - [ ] Code adapted, not copy-pasted (or properly vendored)
+        - [ ] Tests cover the imported behavior
+        - [ ] PR cites this issue and upstream commit hash
+        - [ ] PLAN.md updated if scope changed
