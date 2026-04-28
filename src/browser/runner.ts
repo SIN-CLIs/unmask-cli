@@ -16,12 +16,25 @@ export interface RunnerOptions {
   storageStatePath?: string;
   /** Apply built-in stealth patches before any page script runs. */
   stealth?: boolean;
+  /** Default per-page timeout in ms. */
+  timeout?: number;
+  /** Connect to an already-running browser via CDP instead of launching. */
+  cdpEndpoint?: string;
 }
+
+/** Type alias for the dispatcher / IPC callers. */
+export type RunBrowserOptions = RunnerOptions;
 
 export interface RunnerHandle {
   browser: Browser;
   context: BrowserContext;
   page: Page;
+  close: () => Promise<void>;
+}
+
+export interface RunBrowserHandle {
+  browser: Browser;
+  context: BrowserContext;
   close: () => Promise<void>;
 }
 
@@ -56,6 +69,60 @@ export async function launchBrowser(opts: RunnerOptions = {}): Promise<RunnerHan
     browser,
     context,
     page,
+    close: async () => {
+      try {
+        await context.close();
+      } catch {
+        /* ignore */
+      }
+      try {
+        await browser.close();
+      } catch {
+        /* ignore */
+      }
+    },
+  };
+}
+
+/**
+ * Context-only variant used by the IPC dispatcher (where pages are created
+ * lazily per RPC `open` call). Supports plain launch and CDP attach.
+ */
+export async function runBrowser(opts: RunnerOptions = {}): Promise<RunBrowserHandle> {
+  let browser: Browser;
+  if (opts.cdpEndpoint) {
+    browser = await chromium.connectOverCDP(opts.cdpEndpoint);
+  } else {
+    browser = await chromium.launch({
+      headless: opts.headless ?? true,
+      args: [
+        '--disable-blink-features=AutomationControlled',
+        '--no-sandbox',
+        '--disable-dev-shm-usage',
+      ],
+    });
+  }
+
+  const existing = browser.contexts();
+  const context: BrowserContext =
+    existing[0] ??
+    (await browser.newContext({
+      userAgent: opts.userAgent ?? DEFAULT_UA,
+      viewport: opts.viewport ?? { width: 1366, height: 768 },
+      locale: opts.locale ?? 'de-DE',
+      timezoneId: opts.timezoneId ?? 'Europe/Berlin',
+      ...(opts.storageStatePath ? { storageState: opts.storageStatePath } : {}),
+    }));
+
+  if (opts.timeout) context.setDefaultTimeout(opts.timeout);
+
+  if (opts.stealth) {
+    await applyStealthPatches(context);
+  }
+
+  return {
+    browser,
+    context,
     close: async () => {
       try {
         await context.close();

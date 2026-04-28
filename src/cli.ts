@@ -10,6 +10,7 @@
  */
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { homedir } from 'node:os';
 import { Command } from 'commander';
 import { inspect } from './commands/inspect.js';
 import { ConsoleListener } from './modules/console.js';
@@ -18,8 +19,14 @@ import { NetworkSniffer } from './modules/network.js';
 import { launchBrowser } from './browser/runner.js';
 import { QueueManager } from './queue/manager.js';
 import { StateStore } from './queue/state.js';
+import { Telemetry } from './queue/telemetry.js';
 import { logger } from './utils/logger.js';
+import { Notifier } from './utils/notify.js';
 import { SurveySchema, type Survey } from './schemas/unmask.js';
+import { runStdioServer } from './ipc/stdio.js';
+import { runHttpServer } from './ipc/http.js';
+import { bundleSession } from './replay/bundle.js';
+import { isLLMAvailable } from './llm/provider.js';
 
 const program = new Command();
 
@@ -204,6 +211,10 @@ queue
     'simulate every item with the given outcome (success|disqualified|failed|mixed)',
     'mixed',
   )
+  .option('--telemetry-out <path>', 'write per-item telemetry as JSONL to this path')
+  .option('--webhook <url>', 'POST a JSON summary to this webhook on completion')
+  .option('--slack <url>', 'post a Slack message on completion')
+  .option('--discord <url>', 'post a Discord message on completion')
   .action(async (opts) => {
     const store = new StateStore({ dir: opts.stateDir });
     const qm = new QueueManager({
@@ -212,15 +223,140 @@ queue
       noJitter: opts.jitter === false,
     });
     await qm.load();
+    const telemetry = new Telemetry();
 
     const sim = String(opts.simulate);
     const final = await qm.run(async (survey, _ctx) => {
+      const t0 = Date.now();
       let outcome: 'success' | 'disqualified' | 'failed';
       if (sim === 'success' || sim === 'disqualified' || sim === 'failed') outcome = sim;
       else outcome = pickMixed(survey.id);
+      telemetry.recordResult(
+        { survey },
+        outcome === 'success' ? 'success' : outcome === 'failed' ? 'failed' : 'skipped',
+        Date.now() - t0,
+      );
       return { outcome };
     });
-    await emit(final);
+    const summary = telemetry.summary();
+    if (opts.telemetryOut) {
+      await fs.writeFile(path.resolve(String(opts.telemetryOut)), telemetry.toJSONL() + '\n', 'utf8');
+    }
+    const notifier = new Notifier({
+      ...(opts.webhook ? { webhookUrl: String(opts.webhook) } : {}),
+      ...(opts.slack ? { slackUrl: String(opts.slack) } : {}),
+      ...(opts.discord ? { discordUrl: String(opts.discord) } : {}),
+    });
+    if (opts.webhook || opts.slack || opts.discord) {
+      await notifier.send({
+        level: summary.failures === 0 ? 'success' : 'warn',
+        title: 'unmask queue run finished',
+        message: `${summary.successes} ok, ${summary.failures} failed, ${summary.skipped} skipped`,
+        fields: {
+          successRate: summary.successRate.toFixed(2),
+          totalRewardEUR: summary.totalRewardEUR.toFixed(2),
+          effectiveEurPerHour: summary.effectiveEurPerHour.toFixed(2),
+        },
+      });
+    }
+    await emit({ ...final, telemetry: summary });
+  });
+
+// ---- serve (IPC for playstealth-cli / external callers) --------------------
+program
+  .command('serve')
+  .description(
+    'Run unmask-cli as a JSON-RPC 2.0 server (issues #14, #15). Default mode is stdio; use --http to bind a TCP port.',
+  )
+  .option('--stdio', 'newline-delimited JSON-RPC over stdin/stdout', false)
+  .option('--http', 'expose HTTP+WebSocket server', false)
+  .option('--port <port>', 'HTTP port (default 8765)', '8765')
+  .option('--host <host>', 'HTTP host (default 127.0.0.1)', '127.0.0.1')
+  .option('--auth-token <token>', 'require Bearer token on HTTP/WS')
+  .action(async (opts) => {
+    if (opts.http) {
+      const httpOpts: Parameters<typeof runHttpServer>[0] = {
+        port: Number(opts.port),
+        host: String(opts.host),
+      };
+      if (opts.authToken !== undefined) httpOpts.authToken = String(opts.authToken);
+      await runHttpServer(httpOpts);
+      return;
+    }
+    // default = stdio
+    await runStdioServer();
+  });
+
+// ---- bundle ----------------------------------------------------------------
+program
+  .command('bundle')
+  .description('Zip a session directory into a single replay bundle (issue #12).')
+  .argument('<session-dir>', 'path to ~/.unmask/sessions/<id>')
+  .option('-o, --output <path>', 'output zip path')
+  .action(async (sessionDir: string, opts) => {
+    const result = await bundleSession(path.resolve(sessionDir), opts.output);
+    await emit({ bundle: result });
+  });
+
+// ---- doctor ----------------------------------------------------------------
+program
+  .command('doctor')
+  .description('Self-diagnostic: Node version, Playwright browsers, LLM key, write paths (issue #19).')
+  .action(async () => {
+    const checks: Array<{ name: string; ok: boolean; detail: string }> = [];
+    const nodeOk = Number(process.versions.node.split('.')[0]) >= 20;
+    checks.push({
+      name: 'node>=20',
+      ok: nodeOk,
+      detail: process.version,
+    });
+    let playwrightOk = false;
+    let playwrightDetail = 'not detected';
+    try {
+      const pkgPath = (await import('node:url')).fileURLToPath(
+        await import.meta.resolve('playwright/package.json'),
+      );
+      const pkg = JSON.parse(await fs.readFile(pkgPath, 'utf8'));
+      playwrightOk = true;
+      playwrightDetail = `playwright@${pkg.version}`;
+    } catch (err) {
+      playwrightDetail = (err as Error).message;
+    }
+    checks.push({ name: 'playwright', ok: playwrightOk, detail: playwrightDetail });
+
+    const homeDir = path.join(homedir(), '.unmask');
+    let homeOk = true;
+    let homeDetail = homeDir;
+    try {
+      await fs.mkdir(homeDir, { recursive: true });
+    } catch (err) {
+      homeOk = false;
+      homeDetail = (err as Error).message;
+    }
+    checks.push({ name: 'home-dir', ok: homeOk, detail: homeDetail });
+
+    checks.push({
+      name: 'llm-key',
+      ok: isLLMAvailable(),
+      detail: isLLMAvailable() ? 'env var set' : 'no AI_GATEWAY_API_KEY (LLM features disabled)',
+    });
+
+    const failed = checks.filter((c) => !c.ok && c.name !== 'llm-key').length;
+    await emit({ checks, ok: failed === 0 });
+    if (failed > 0) process.exitCode = 1;
+  });
+
+// ---- init ------------------------------------------------------------------
+program
+  .command('init')
+  .description('Scaffold a fresh state directory (issue #24).')
+  .option('--state-dir <dir>', 'where to scaffold', '.unmask')
+  .action(async (opts) => {
+    const dir = path.resolve(String(opts.stateDir));
+    await fs.mkdir(dir, { recursive: true });
+    const store = new StateStore({ dir });
+    await store.load();
+    await emit({ ok: true, dir });
   });
 
 // -----------------------------------------------------------------------------

@@ -12,7 +12,10 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "scripts/postinstall.mjs",
+    "integrations",
     "README.md",
+    "HACKING.md",
     "LICENSE"
   ],
   "engines": {
@@ -25,17 +28,27 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "vitest run tests/e2e.test.ts",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
-    "prepublishOnly": "pnpm run build"
+    "doctor": "node dist/cli.js doctor",
+    "postinstall": "node scripts/postinstall.mjs",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.64",
+    "ai": "^6.0.168",
+    "archiver": "^7.0.1",
     "commander": "^12.1.0",
     "playwright": "^1.48.0",
-    "zod": "^3.23.8"
+    "ws": "^8.20.0",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.25.2"
   },
   "devDependencies": {
+    "@types/archiver": "^6.0.4",
     "@types/node": "^22.7.5",
+    "@types/ws": "^8.18.1",
     "@typescript-eslint/eslint-plugin": "^8.8.1",
     "@typescript-eslint/parser": "^8.8.1",
     "eslint": "^9.12.0",
