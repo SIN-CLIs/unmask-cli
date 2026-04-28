@@ -1,0 +1,9 @@
+# CODEOWNERS — single-source governance after CEO audit 2026-04-28.
+# Every PR auto-requests review from these owners.
+
+* @Delqhi
+
+/.github/        @Delqhi
+/PLAN.md         @Delqhi
+/ROADMAP.md      @Delqhi
+/COMPETITIVE_STRATEGY.md  @Delqhi
