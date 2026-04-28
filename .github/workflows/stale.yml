@@ -1,0 +1,22 @@
+name: stale
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-stale: 45
+          days-before-close: 14
+          stale-issue-message: "This issue has been inactive for 45 days. It will close in 14 days unless updated. Add the `pinned` label to keep it open indefinitely."
+          stale-pr-message: "This PR has been inactive for 45 days and will close in 14 days unless updated."
+          exempt-issue-labels: "pinned,priority-p0,security"
+          exempt-pr-labels: "pinned"
