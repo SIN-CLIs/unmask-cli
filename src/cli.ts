@@ -13,7 +13,6 @@ import path from 'node:path';
 import { homedir } from 'node:os';
 import { Command } from 'commander';
 import { inspect } from './commands/inspect.js';
-import { ConsoleListener } from './modules/console.js';
 import { DomScanner } from './modules/dom.js';
 import { NetworkSniffer } from './modules/network.js';
 import { launchBrowser } from './browser/runner.js';
@@ -122,24 +121,99 @@ program
   });
 
 // ---- console ----------------------------------------------------------------
-program
-  .command('console')
-  .description('Live console listener (unmask-console).')
-  .argument('<url>', 'Page URL to listen to')
-  .option('--headful', 'launch a visible browser', false)
-  .option('--wait-ms <ms>', 'how long to listen after navigation in ms', '8000')
-  .option('-o, --output <path>', 'write JSON to this path instead of stdout')
-  .action(async (url: string, opts) => {
-    const handle = await launchBrowser({ headless: !opts.headful });
-    const listener = new ConsoleListener();
-    try {
-      listener.attach(handle.page);
-      await handle.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60_000 });
-      await handle.page.waitForTimeout(Number(opts.waitMs) || 8_000);
-      await emit(listener.results(), opts.output);
-    } finally {
-      await handle.close();
+
+// ---- survey (X-ray for playstealth-cli) -------------------------------------
+const survey = program
+  .command("survey")
+  .description("Survey page analysis for playstealth-cli integration.");
+
+survey
+  .command("scan")
+  .description("Full survey page scan: panel, traps, reward, risk, questions.")
+  .argument("<url>", "Survey page URL")
+  .option("--headful", "launch a visible browser", false)
+  .option("--json", "output JSON only", false)
+  .action(async (url: string, opts: Record<string, string>) => {
+    const { launchBrowser } = await import("./browser/runner.js");
+    const { PanelDetector } = await import(
+      "./modules/survey/panel-detector.js"
+    );
+    const { TrapScanner } = await import("./modules/survey/trap-scanner.js");
+    const { RewardEstimator } = await import(
+      "./modules/survey/reward-estimator.js"
+    );
+    const { RiskAssessor } = await import(
+      "./modules/survey/risk-assessor.js"
+    );
+    const { QuestionClassifier } = await import(
+      "./modules/survey/question-classifier.js"
+    );
+
+    const handle = await launchBrowser({
+      headless: opts.headful !== "true",
+    });
+    await handle.page.goto(url, { waitUntil: "domcontentloaded" });
+
+    const panel = await new PanelDetector().detect(handle.page);
+    const traps = await new TrapScanner().scan(handle.page);
+    const reward = await new RewardEstimator().estimate(handle.page);
+    const questions = await new QuestionClassifier().classify(handle.page);
+    const risk = new RiskAssessor().assess(
+      panel.id,
+      traps,
+      0,
+      questions.filter((q) => q.type === "text" || q.type === "textarea")
+        .length
+    );
+
+    const result = { panel, traps, reward, risk, questions };
+
+    if (opts.json) {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      console.log(`\n🔍 Survey Scan: ${url}`);
+      console.log(`  Panel:    ${panel.id} (${(panel.confidence * 100).toFixed(0)}%)`);
+      console.log(`  Reward:   ${reward.amountEur ?? "?"} € / ${reward.timeMinutes ?? "?"} min → ${reward.eurPerHour ?? "?"} €/h`);
+      console.log(`  Risk:     ${risk.riskLevel} (${(risk.dqProbability * 100).toFixed(0)}% DQ probability)`);
+      console.log(`  Traps:    ${traps.length} found`);
+      for (const t of traps) {
+        console.log(`    ⚠️  ${t.type}: ${t.description}`);
+      }
+      console.log(`  Questions: ${questions.map((q) => `${q.type}(${q.count})`).join(", ")}`);
+      console.log();
     }
+
+    await handle.close();
+  });
+
+survey
+  .command("panel")
+  .description("Detect which survey panel engine is running.")
+  .argument("<url>", "Survey page URL")
+  .action(async (url: string) => {
+    const { launchBrowser } = await import("./browser/runner.js");
+    const { PanelDetector } = await import(
+      "./modules/survey/panel-detector.js"
+    );
+    const handle = await launchBrowser({ headless: true });
+    await handle.page.goto(url, { waitUntil: "domcontentloaded" });
+    const result = await new PanelDetector().detect(handle.page);
+    console.log(JSON.stringify(result, null, 2));
+    await handle.close();
+  });
+
+survey
+  .command("traps")
+  .description("Scan survey page for honeypots and attention checks.")
+  .argument("<url>", "Survey page URL")
+  .action(async (url: string) => {
+    const { launchBrowser } = await import("./browser/runner.js");
+    const { TrapScanner } = await import("./modules/survey/trap-scanner.js");
+    const handle = await launchBrowser({ headless: true });
+    await handle.page.goto(url, { waitUntil: "domcontentloaded" });
+    const result = await new TrapScanner().scan(handle.page);
+    console.log(JSON.stringify(result, null, 2));
+    await handle.close();
   });
 
 // ---- queue ------------------------------------------------------------------
