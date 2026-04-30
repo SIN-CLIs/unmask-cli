@@ -10,6 +10,7 @@ import { ConsoleListener } from '../modules/console.js';
 import { Session } from '../session/session.js';
 import { bundleSession } from '../replay/bundle.js';
 import { logger } from '../utils/logger.js';
+import { preScan } from '../commands/pre-scan.js';
 
 export const RpcRequestSchema = z.object({
   jsonrpc: z.literal('2.0'),
@@ -68,7 +69,11 @@ export class Dispatcher {
   /** Public method registry. Add new RPC methods here. */
   private async invoke(method: string, rawParams: unknown): Promise<unknown> {
     switch (method) {
-      case "pre-scan": { const url = params?.url || "about:blank"; const res = await preScan(browser, url); return { jsonrpc: "2.0", id, result: res }; }
+      case 'pre-scan': {
+        const params = parse(z.object({ url: z.string().url() }), rawParams);
+        const h = await this.openPage(params);
+        return preScan(h.page.context().browser()!, params.url);
+      }
       case 'open': {
         const params = parse(
           z.object({
