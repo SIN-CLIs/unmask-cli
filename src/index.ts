@@ -69,3 +69,5 @@ export { Notifier } from './utils/notify.js';
 export type { NotifyOptions, NotifyPayload, NotifyLevel } from './utils/notify.js';
 export { Logger, logger } from './utils/logger.js';
 export { microJitter, humanPause, jitterMs, sleep, randomInt } from './utils/jitter.js';
+export { preScan } from './commands/pre-scan.js';
+export type { PreScanResult, PreScanElement } from './commands/pre-scan.js';

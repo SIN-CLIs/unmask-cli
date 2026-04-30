@@ -68,6 +68,7 @@ export class Dispatcher {
   /** Public method registry. Add new RPC methods here. */
   private async invoke(method: string, rawParams: unknown): Promise<unknown> {
     switch (method) {
+      case "pre-scan": { const url = params?.url || "about:blank"; const res = await preScan(browser, url); return { jsonrpc: "2.0", id, result: res }; }
       case 'open': {
         const params = parse(
           z.object({
