@@ -1,0 +1,22 @@
+# unmask-cli — SENSE-Layer der Stealth-Triade
+role: sense-layer
+triad: [playstealth-cli, skylight-cli, unmask-cli]
+orchestrator: stealth-runner
+
+repos:
+  - name: stealth-runner
+    url: https://github.com/OpenSIN-AI/stealth-runner
+    role: orchestrator
+  - name: skylight-cli
+    url: https://github.com/SIN-CLIs/skylight-cli
+    role: act-layer
+  - name: unmask-cli
+    url: https://github.com/SIN-CLIs/unmask-cli
+    role: sense-layer
+    description: Stealth-Verifikation, Fingerprint-Check, Pre-Scan
+  - name: playstealth-cli
+    url: https://github.com/SIN-CLIs/playstealth-cli
+    role: hide-layer
+  - name: heypiggy-worker
+    url: https://github.com/OpenSIN-AI/A2A-SIN-Worker-heypiggy
+    role: archive
