@@ -1,29 +1,16 @@
-# BRAIN.md — unmask-cli (Röntgen-Scanner)
+# brain.md - Systemwissen (2026-05-01)
 
-> SIN-CLIs | OpenSIN Survey Automation Stack | Sense Layer
-> 34 Tests | TypeScript | JSON-RPC Server
+## unmask-cli Kern
+- **Tech:** TypeScript, Playwright, CDP
+- **API:** JSON-RPC 2.0 (stdio oder HTTP)
+- **Methods:** dom.scan, network.list, console.list, act, extract, observe
+- **Queue:** Strict sequential, persistent state, blacklist, telemetry
 
-## Architektur
+## Integration
+- Start: `unmask serve --http` (Port 8765)
+- Python Client: `integrations/python/unmask_client.py`
+- Pairt mit playstealth-cli via CDP attach
 
-```
-unmask-cli (Sense)  →  playstealth-cli (Brain)  →  computer-use-mcp (Hand)
-   Survey-Analyse       Strategie + Persona         Maus/Keyboard/Screenshot
-```
-
-## Survey-Scanner (5 Module)
-
-| Scanner | Erkennt |
-|---------|---------|
-| `panel-detector` | Dynata/Cint/Lucid/PureSpectrum/Sapio/Qualtrics |
-| `trap-scanner` | Honeypots, Attention-Checks, Consistency-Traps |
-| `reward-estimator` | EUR/Min, EUR/Stunde |
-| `risk-assessor` | DQ-Wahrscheinlichkeit, Risiko-Faktoren |
-| `question-classifier` | Radio/Matrix/Slider/Text/Date/Number |
-
-## CLI
-
-```bash
-unmask survey scan <url>     # Vollständige Pre-Flight-Analyse
-unmask survey panel <url>    # Panel-Detection
-unmask survey traps <url>    # Trap-Scanning
-```
+## Graphify
+- 214 nodes, 25 communities
+- `graphify update .` nach Code-Änderungen

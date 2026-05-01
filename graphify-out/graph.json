@@ -368,18 +368,18 @@
       "file_type": "rationale",
       "source_file": "integrations/python/unmask_client.py",
       "source_location": "L1",
-      "id": "python_unmask_client_rationale_1",
       "community": 1,
-      "norm_label": "unmask_client.py \u2014 minimal python json-rpc client for unmask-cli.  spawns `unmas"
+      "norm_label": "unmask_client.py \u2014 minimal python json-rpc client for unmask-cli.  spawns `unmas",
+      "id": "python_unmask_client_rationale_1"
     },
     {
       "label": "JSON-RPC 2.0 client over stdio.",
       "file_type": "rationale",
       "source_file": "integrations/python/unmask_client.py",
       "source_location": "L32",
-      "id": "python_unmask_client_rationale_32",
       "community": 1,
-      "norm_label": "json-rpc 2.0 client over stdio."
+      "norm_label": "json-rpc 2.0 client over stdio.",
+      "id": "python_unmask_client_rationale_32"
     },
     {
       "label": "api-push.mjs",
@@ -3042,8 +3042,8 @@
       "source_file": "src/ipc/dispatch.ts",
       "source_location": "L170",
       "weight": 1.0,
-      "_src": "ipc_dispatch_dispatcher_invoke",
-      "_tgt": "llm_extract_extract",
+      "_src": "llm_extract_extract",
+      "_tgt": "ipc_dispatch_dispatcher_invoke",
       "source": "llm_extract_extract",
       "target": "ipc_dispatch_dispatcher_invoke"
     },
@@ -3174,8 +3174,8 @@
       "source_file": "src/ipc/dispatch.ts",
       "source_location": "L149",
       "weight": 1.0,
-      "_src": "ipc_dispatch_dispatcher_invoke",
-      "_tgt": "llm_act_act",
+      "_src": "llm_act_act",
+      "_tgt": "ipc_dispatch_dispatcher_invoke",
       "source": "llm_act_act",
       "target": "ipc_dispatch_dispatcher_invoke"
     },
@@ -3258,8 +3258,8 @@
       "source_file": "src/ipc/dispatch.ts",
       "source_location": "L126",
       "weight": 1.0,
-      "_src": "ipc_dispatch_dispatcher_invoke",
-      "_tgt": "llm_observe_observe",
+      "_src": "llm_observe_observe",
+      "_tgt": "ipc_dispatch_dispatcher_invoke",
       "source": "llm_observe_observe",
       "target": "ipc_dispatch_dispatcher_invoke"
     },
@@ -3906,8 +3906,8 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L128",
       "weight": 1.0,
-      "_src": "queue_manager_queuemanager_run",
-      "_tgt": "utils_jitter_microjitter",
+      "_src": "utils_jitter_microjitter",
+      "_tgt": "queue_manager_queuemanager_run",
       "source": "utils_jitter_microjitter",
       "target": "queue_manager_queuemanager_run"
     },
@@ -3918,8 +3918,8 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L154",
       "weight": 1.0,
-      "_src": "queue_manager_queuemanager_run",
-      "_tgt": "utils_jitter_humanpause",
+      "_src": "utils_jitter_humanpause",
+      "_tgt": "queue_manager_queuemanager_run",
       "source": "utils_jitter_humanpause",
       "target": "queue_manager_queuemanager_run"
     },
@@ -4038,8 +4038,8 @@
       "source_file": "src/commands/inspect.ts",
       "source_location": "L30",
       "weight": 1.0,
-      "_src": "commands_inspect_inspect",
-      "_tgt": "schemas_unmask_emptyunmaskresponse",
+      "_src": "schemas_unmask_emptyunmaskresponse",
+      "_tgt": "commands_inspect_inspect",
       "source": "schemas_unmask_emptyunmaskresponse",
       "target": "commands_inspect_inspect"
     },
@@ -4050,8 +4050,8 @@
       "source_file": "src/commands/inspect.ts",
       "source_location": "L91",
       "weight": 1.0,
-      "_src": "commands_inspect_inspect",
-      "_tgt": "schemas_unmask_parseunmaskresponse",
+      "_src": "schemas_unmask_parseunmaskresponse",
+      "_tgt": "commands_inspect_inspect",
       "source": "schemas_unmask_parseunmaskresponse",
       "target": "commands_inspect_inspect"
     },
@@ -4110,8 +4110,8 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L46",
       "weight": 1.0,
-      "_src": "queue_state_statestore_load",
-      "_tgt": "schemas_queue_emptyqueuestate",
+      "_src": "schemas_queue_emptyqueuestate",
+      "_tgt": "queue_state_statestore_load",
       "source": "schemas_queue_emptyqueuestate",
       "target": "queue_state_statestore_load"
     },
@@ -4194,8 +4194,8 @@
       "source_file": "src/commands/inspect.ts",
       "source_location": "L36",
       "weight": 1.0,
-      "_src": "commands_inspect_inspect",
-      "_tgt": "browser_runner_launchbrowser",
+      "_src": "browser_runner_launchbrowser",
+      "_tgt": "commands_inspect_inspect",
       "source": "browser_runner_launchbrowser",
       "target": "commands_inspect_inspect"
     },
@@ -4218,8 +4218,8 @@
       "source_file": "src/ipc/dispatch.ts",
       "source_location": "L247",
       "weight": 1.0,
-      "_src": "ipc_dispatch_dispatcher_openpage",
-      "_tgt": "browser_runner_runbrowser",
+      "_src": "browser_runner_runbrowser",
+      "_tgt": "ipc_dispatch_dispatcher_openpage",
       "source": "browser_runner_runbrowser",
       "target": "ipc_dispatch_dispatcher_openpage"
     },

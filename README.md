@@ -1,5 +1,7 @@
 # unmask-cli
 
+[![Graphify](https://img.shields.io/badge/Graphify-Knowledge%20Graph-2ea44f?logo=gitbook&logoColor=white)](graphify-out/graph.html)
+
 > **The X-ray vision layer for web automation.** A TypeScript Playwright toolkit
 > that captures everything a page does — every fetch, every console log, every
 > interactable element — exposes it through a typed JSON-RPC API, and runs your

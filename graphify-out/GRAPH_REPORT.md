@@ -43,10 +43,10 @@
 ## Surprising Connections (you probably didn't know these)
 - `act()` --calls--> `selfHeal()`  [INFERRED]
   src/llm/act.ts → src/modules/selectors.ts
-- `inspect()` --calls--> `emptyUnmaskResponse()`  [INFERRED]
-  src/commands/inspect.ts → src/schemas/unmask.ts
-- `inspect()` --calls--> `parseUnmaskResponse()`  [INFERRED]
-  src/commands/inspect.ts → src/schemas/unmask.ts
+- `emptyUnmaskResponse()` --calls--> `inspect()`  [INFERRED]
+  src/schemas/unmask.ts → src/commands/inspect.ts
+- `parseUnmaskResponse()` --calls--> `inspect()`  [INFERRED]
+  src/schemas/unmask.ts → src/commands/inspect.ts
 - `extract()` --calls--> `serializeForLLM()`  [INFERRED]
   src/llm/extract.ts → src/llm/serialize.ts
 - `act()` --calls--> `observe()`  [INFERRED]
