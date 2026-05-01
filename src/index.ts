@@ -71,3 +71,4 @@ export { Logger, logger } from './utils/logger.js';
 export { microJitter, humanPause, jitterMs, sleep, randomInt } from './utils/jitter.js';
 export { preScan } from './commands/pre-scan.js';
 export type { PreScanResult, PreScanElement } from './commands/pre-scan.js';
+export { ScreenshotTimeline } from "./commands/screenshot-timeline.js";
