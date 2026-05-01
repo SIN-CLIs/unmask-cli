@@ -72,3 +72,5 @@ export { microJitter, humanPause, jitterMs, sleep, randomInt } from './utils/jit
 export { preScan } from './commands/pre-scan.js';
 export type { PreScanResult, PreScanElement } from './commands/pre-scan.js';
 export { ScreenshotTimeline } from "./commands/screenshot-timeline.js";
+export { visionFallback } from "./commands/vision-fallback.js";
+export type { VisionDecision } from "./commands/vision-fallback.js";
