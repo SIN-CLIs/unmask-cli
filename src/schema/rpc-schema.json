@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "unmask-cli JSON-RPC 2.0 Schema",
+  "methods": {
+    "dom.scan": {"params": {"url": "string"}, "result": "DomScanResult"},
+    "console.list": {"params": {}, "result": "ConsoleEntry[]"},
+    "network.list": {"params": {}, "result": "NetworkEntry[]"},
+    "pre-scan": {"params": {"url": "string"}, "result": "PreScanResult"},
+    "act": {"params": {"page":"string","instruction":"string"}, "result": "Action"},
+    "extract": {"params": {"page":"string","schema":"object"}, "result": "object"},
+    "observe": {"params": {"page":"string","instruction":"string"}, "result": "Observation[]"}
+  }
+}
