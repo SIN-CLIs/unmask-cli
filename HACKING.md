@@ -7,10 +7,10 @@ Internal architecture and integration notes. End-user docs are in `README.md`.
 `unmask-cli` and [`playstealth-cli`](https://github.com/SIN-CLIs/playstealth-cli)
 are deliberately split:
 
-| Layer | Tool | Responsibility |
-|---|---|---|
-| Sense (X-ray gear) | **unmask-cli** | Network sniffing, DOM analysis, console listening, LLM observe/extract/act, replay bundles. |
-| Act (ninja mask) | **playstealth-cli** | Stealth profile, persona, proxy binding, human-input timing, anti-detect patches. |
+| Layer              | Tool                | Responsibility                                                                              |
+| ------------------ | ------------------- | ------------------------------------------------------------------------------------------- |
+| Sense (X-ray gear) | **unmask-cli**      | Network sniffing, DOM analysis, console listening, LLM observe/extract/act, replay bundles. |
+| Act (ninja mask)   | **playstealth-cli** | Stealth profile, persona, proxy binding, human-input timing, anti-detect patches.           |
 
 They communicate over **JSON-RPC 2.0**:
 
@@ -37,21 +37,21 @@ unmask serve --http --port 8765 --auth-token <token>
 
 Methods (see `src/ipc/dispatch.ts`):
 
-| Method | Params | Returns |
-|---|---|---|
-| `ping` | — | `{ pong, ts }` |
-| `open` | `{ url, headless?, cdpEndpoint?, sessionLabel? }` | `{ handleId, sessionId, sessionDir }` |
-| `navigate` | `{ handleId, url }` | `{ url }` |
-| `observe` | `{ handleId, intent, topK?, vision? }` | `ObserveCandidate[]` |
-| `act` | `{ handleId, intent, verb?, value?, vision?, dryRun? }` | `ActResult` |
-| `extract` | `{ handleId, instruction?, vision? }` | `unknown` (LLM output) |
-| `scanDom` | `{ handleId, max?, minConfidence? }` | `DomCandidate[]` |
-| `screenshot` | `{ handleId, fullPage? }` | `{ path }` |
-| `bundle` | `{ handleId }` | `{ bundle }` |
-| `session` | `{ handleId }` | `{ sessionId, sessionDir }` |
-| `list` | — | handle list |
-| `close` | `{ handleId }` | `{ ok, sessionId, sessionDir }` |
-| `shutdown` | — | `{ ok }` |
+| Method       | Params                                                  | Returns                               |
+| ------------ | ------------------------------------------------------- | ------------------------------------- |
+| `ping`       | —                                                       | `{ pong, ts }`                        |
+| `open`       | `{ url, headless?, cdpEndpoint?, sessionLabel? }`       | `{ handleId, sessionId, sessionDir }` |
+| `navigate`   | `{ handleId, url }`                                     | `{ url }`                             |
+| `observe`    | `{ handleId, intent, topK?, vision? }`                  | `ObserveCandidate[]`                  |
+| `act`        | `{ handleId, intent, verb?, value?, vision?, dryRun? }` | `ActResult`                           |
+| `extract`    | `{ handleId, instruction?, vision? }`                   | `unknown` (LLM output)                |
+| `scanDom`    | `{ handleId, max?, minConfidence? }`                    | `DomCandidate[]`                      |
+| `screenshot` | `{ handleId, fullPage? }`                               | `{ path }`                            |
+| `bundle`     | `{ handleId }`                                          | `{ bundle }`                          |
+| `session`    | `{ handleId }`                                          | `{ sessionId, sessionDir }`           |
+| `list`       | —                                                       | handle list                           |
+| `close`      | `{ handleId }`                                          | `{ ok, sessionId, sessionDir }`       |
+| `shutdown`   | —                                                       | `{ ok }`                              |
 
 ## Python integration recipe
 
@@ -84,7 +84,7 @@ with UnmaskClient(cmd=["unmask", "serve", "--stdio"]) as unmask:
 ### Combining with playstealth-cli
 
 `playstealth-cli` owns the browser launch (so it can apply stealth patches,
-persona profile, proxy, etc.). To make `unmask-cli` *attach* instead of
+persona profile, proxy, etc.). To make `unmask-cli` _attach_ instead of
 launching its own browser, expose a CDP endpoint from playstealth and pass it:
 
 ```python
@@ -128,7 +128,7 @@ export GOOGLE_GENERATIVE_AI_API_KEY=... # direct Google
 Override the model:
 
 ```ts
-await observe(page, "primary CTA", { model: "anthropic/claude-opus-4.6" });
+await observe(page, 'primary CTA', { model: 'anthropic/claude-opus-4.6' });
 ```
 
 If no key is set, `observe()` automatically falls back to the pure-DOM
@@ -140,12 +140,12 @@ Captured HARs and events bundles can be replayed via Playwright's
 `page.routeFromHAR()` (issue #13). Pattern:
 
 ```ts
-import { chromium } from "playwright";
+import { chromium } from 'playwright';
 const browser = await chromium.launch();
 const ctx = await browser.newContext();
 const page = await ctx.newPage();
-await page.routeFromHAR("/path/to/network.har", { update: false });
-await page.goto("https://surveys.example.com/start");
+await page.routeFromHAR('/path/to/network.har', { update: false });
+await page.goto('https://surveys.example.com/start');
 ```
 
 This lets you build deterministic E2E tests against a frozen capture.

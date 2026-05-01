@@ -1,15 +1,18 @@
-# Graph Report - unmask-cli  (2026-05-01)
+# Graph Report - unmask-cli (2026-05-01)
 
 ## Corpus Check
-- 55 files · ~25,706 words
+
+- 55 files · ~25,722 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
+
 - 214 nodes · 320 edges · 17 communities detected
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 16 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
+
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
@@ -29,6 +32,7 @@
 - [[_COMMUNITY_Community 16|Community 16]]
 
 ## God Nodes (most connected - your core abstractions)
+
 1. `UnmaskClient` - 21 edges
 2. `Logger` - 11 edges
 3. `QueueManager` - 10 edges
@@ -41,88 +45,107 @@
 10. `LLM` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `act()` --calls--> `selfHeal()`  [INFERRED]
+
+- `act()` --calls--> `selfHeal()` [INFERRED]
   src/llm/act.ts → src/modules/selectors.ts
-- `emptyUnmaskResponse()` --calls--> `inspect()`  [INFERRED]
+- `emptyUnmaskResponse()` --calls--> `inspect()` [INFERRED]
   src/schemas/unmask.ts → src/commands/inspect.ts
-- `parseUnmaskResponse()` --calls--> `inspect()`  [INFERRED]
+- `parseUnmaskResponse()` --calls--> `inspect()` [INFERRED]
   src/schemas/unmask.ts → src/commands/inspect.ts
-- `extract()` --calls--> `serializeForLLM()`  [INFERRED]
+- `extract()` --calls--> `serializeForLLM()` [INFERRED]
   src/llm/extract.ts → src/llm/serialize.ts
-- `act()` --calls--> `observe()`  [INFERRED]
+- `act()` --calls--> `observe()` [INFERRED]
   src/llm/act.ts → src/llm/observe.ts
 
 ## Communities
 
 ### Community 0 - "Community 0"
+
 Cohesion: 0.09
 Nodes (4): Telemetry, toEuros(), Notifier, post()
 
 ### Community 1 - "Community 1"
+
 Cohesion: 0.14
-Nodes (5): unmask_client.py — minimal Python JSON-RPC client for unmask-cli.  Spawns `unmas, JSON-RPC 2.0 client over stdio., UnmaskClient, UnmaskRPCError, RuntimeError
+Nodes (5): unmask_client.py — minimal Python JSON-RPC client for unmask-cli. Spawns `unmas, JSON-RPC 2.0 client over stdio., UnmaskClient, UnmaskRPCError, RuntimeError
 
 ### Community 2 - "Community 2"
+
 Cohesion: 0.11
 Nodes (9): act(), planFromText(), extract(), observe(), isLLMAvailable(), LLM, serializeForLLM(), DomScanner (+1 more)
 
 ### Community 3 - "Community 3"
+
 Cohesion: 0.16
 Nodes (7): mapOutcomeToStatus(), QueueManager, humanPause(), jitterMs(), microJitter(), randomInt(), sleep()
 
 ### Community 4 - "Community 4"
+
 Cohesion: 0.19
 Nodes (4): preScan(), Dispatcher, parse(), bundleSession()
 
 ### Community 5 - "Community 5"
+
 Cohesion: 0.24
 Nodes (12): applyStealthPatches(), launchBrowser(), runBrowser(), deriveSurveys(), extractCandidatesFromJson(), inspect(), parseFirstAmount(), pickAny() (+4 more)
 
 ### Community 6 - "Community 6"
+
 Cohesion: 0.23
 Nodes (2): colourPrefix(), Logger
 
 ### Community 7 - "Community 7"
+
 Cohesion: 0.31
 Nodes (2): ConsoleListener, mapLevel()
 
 ### Community 8 - "Community 8"
+
 Cohesion: 0.22
 Nodes (3): PanelDetector, RiskAssessor, TrapScanner
 
 ### Community 9 - "Community 9"
+
 Cohesion: 0.46
 Nodes (2): StateStore, emptyQueueState()
 
 ### Community 10 - "Community 10"
+
 Cohesion: 0.29
 Nodes (1): NetworkSniffer
 
 ### Community 11 - "Community 11"
+
 Cohesion: 0.47
 Nodes (1): Session
 
 ### Community 12 - "Community 12"
+
 Cohesion: 0.4
 Nodes (1): ScreenshotTimeline
 
 ### Community 13 - "Community 13"
+
 Cohesion: 0.83
 Nodes (3): api(), main(), walk()
 
 ### Community 14 - "Community 14"
+
 Cohesion: 0.5
 Nodes (1): RewardEstimator
 
 ### Community 15 - "Community 15"
+
 Cohesion: 0.5
 Nodes (1): QuestionClassifier
 
 ### Community 16 - "Community 16"
+
 Cohesion: 1.0
 Nodes (2): ensureLabel(), gh()
 
 ## Knowledge Gaps
+
 - **2 isolated node(s):** `unmask_client.py — minimal Python JSON-RPC client for unmask-cli.  Spawns `unmas`, `JSON-RPC 2.0 client over stdio.`
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Community 6`** (12 nodes): `colourPrefix()`, `Logger`, `.child()`, `.constructor()`, `.debug()`, `.error()`, `.info()`, `.setJson()`, `.setLevel()`, `.setSilent()`, `.warn()`, `.write()`
@@ -145,6 +168,7 @@ Nodes (2): ensureLabel(), gh()
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
+
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Logger` connect `Community 6` to `Community 0`?**

@@ -30,12 +30,12 @@ surface so it can be driven from Python, Go, or any other language.
 
 ### Observation layer (the "X-ray")
 
-| Module           | Source signal                                         | Output                                                                                                                                |
-| ---------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `unmask-network` | Chrome DevTools Protocol (`Network.*`, `Fetch.*`)     | Every fetch / XHR with full headers, request body, response body. Survives navigation via `Fetch.*` body capture.                     |
-| `unmask-dom`     | Live DOM walk + Playwright `accessibility.snapshot()` | Every interactable element with a stable, prioritised selector (`data-testid` > `id` > `aria-label` > `role+name` > `text` > path).   |
-| `unmask-console` | `Page.console`, `pageerror`                           | Every log / warn / error with stack and severity.                                                                                     |
-| `selfHeal`       | Multi-strategy resolver                               | Locator that survives small DOM changes by falling back through `data-testid` → `aria` → `role+name` → `text`.                        |
+| Module           | Source signal                                         | Output                                                                                                                              |
+| ---------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `unmask-network` | Chrome DevTools Protocol (`Network.*`, `Fetch.*`)     | Every fetch / XHR with full headers, request body, response body. Survives navigation via `Fetch.*` body capture.                   |
+| `unmask-dom`     | Live DOM walk + Playwright `accessibility.snapshot()` | Every interactable element with a stable, prioritised selector (`data-testid` > `id` > `aria-label` > `role+name` > `text` > path). |
+| `unmask-console` | `Page.console`, `pageerror`                           | Every log / warn / error with stack and severity.                                                                                   |
+| `selfHeal`       | Multi-strategy resolver                               | Locator that survives small DOM changes by falling back through `data-testid` → `aria` → `role+name` → `text`.                      |
 
 ### Intelligence layer (LLM, optional)
 
@@ -45,9 +45,9 @@ agents do. The package degrades gracefully: without an `AI_GATEWAY_API_KEY`
 all three fall back to deterministic DOM heuristics.
 
 ```ts
-await act(page, "click the start button")
-const data = await extract(page, z.object({ price: z.number() }))
-const candidates = await observe(page, "all primary CTAs")
+await act(page, 'click the start button');
+const data = await extract(page, z.object({ price: z.number() }));
+const candidates = await observe(page, 'all primary CTAs');
 ```
 
 ### Operational layer (the "queue")
@@ -95,9 +95,17 @@ unmask inspect https://example.com --out report.json
 {
   "url": "https://example.com",
   "title": "Example Domain",
-  "elements": [{ "selector": "a[href=\"https://www.iana.org/...\"]", "label": "More information…", "confidence": 0.84 }],
-  "network": [{ "url": "...", "method": "GET", "status": 200, "requestHeaders": {}, "responseBody": "..." }],
-  "console": [{ "type": "warning", "text": "..." }]
+  "elements": [
+    {
+      "selector": "a[href=\"https://www.iana.org/...\"]",
+      "label": "More information…",
+      "confidence": 0.84,
+    },
+  ],
+  "network": [
+    { "url": "...", "method": "GET", "status": 200, "requestHeaders": {}, "responseBody": "..." },
+  ],
+  "console": [{ "type": "warning", "text": "..." }],
 }
 ```
 
@@ -114,40 +122,41 @@ unmask queue run --state-dir .unmask \
 
 ## CLI reference
 
-| Command                              | Purpose                                                          |
-| ------------------------------------ | ---------------------------------------------------------------- |
-| `unmask inspect <url>`               | Full one-shot X-ray (DOM + network + console).                   |
-| `unmask network <url>`               | Network-only sniff.                                              |
-| `unmask dom <url>`                   | DOM-only semantic scan.                                          |
-| `unmask console <url>`               | Console + pageerror only.                                        |
-| `unmask init [--state-dir]`          | Scaffold an empty queue state directory.                         |
-| `unmask queue add <surveys.json>`    | Enqueue surveys.                                                 |
-| `unmask queue list`                  | Show queue, blacklist, last results.                             |
-| `unmask queue blacklist <id>`        | Persistently skip an item.                                       |
-| `unmask queue unblacklist <id>`      | Re-enable a blacklisted item.                                    |
-| `unmask queue run`                   | Process queue strictly sequentially with telemetry + webhooks.   |
-| `unmask queue reset`                 | Reset state (`--keep-blacklist` to preserve the blacklist).      |
-| `unmask serve [--http]`              | JSON-RPC server (stdio default, HTTP+WS optional).               |
-| `unmask bundle <session-dir>`        | Zip a session into a portable replay bundle.                     |
-| `unmask doctor`                      | Self-diagnostic.                                                 |
+| Command                           | Purpose                                                        |
+| --------------------------------- | -------------------------------------------------------------- |
+| `unmask inspect <url>`            | Full one-shot X-ray (DOM + network + console).                 |
+| `unmask network <url>`            | Network-only sniff.                                            |
+| `unmask dom <url>`                | DOM-only semantic scan.                                        |
+| `unmask console <url>`            | Console + pageerror only.                                      |
+| `unmask init [--state-dir]`       | Scaffold an empty queue state directory.                       |
+| `unmask queue add <surveys.json>` | Enqueue surveys.                                               |
+| `unmask queue list`               | Show queue, blacklist, last results.                           |
+| `unmask queue blacklist <id>`     | Persistently skip an item.                                     |
+| `unmask queue unblacklist <id>`   | Re-enable a blacklisted item.                                  |
+| `unmask queue run`                | Process queue strictly sequentially with telemetry + webhooks. |
+| `unmask queue reset`              | Reset state (`--keep-blacklist` to preserve the blacklist).    |
+| `unmask serve [--http]`           | JSON-RPC server (stdio default, HTTP+WS optional).             |
+| `unmask bundle <session-dir>`     | Zip a session into a portable replay bundle.                   |
+| `unmask doctor`                   | Self-diagnostic.                                               |
 
 ## Programmatic API (TypeScript)
 
 ```ts
-import { launchBrowser, NetworkSniffer, DomScanner, ConsoleListener, selfHeal } from 'unmask-cli'
+import { launchBrowser, NetworkSniffer, DomScanner, ConsoleListener, selfHeal } from 'unmask-cli';
 
-const h = await launchBrowser({ headless: true, stealth: true })
-const sniff = await NetworkSniffer.attach(h.page)
-const dom = new DomScanner(h.page)
-const con = new ConsoleListener(h.page)
+const h = await launchBrowser({ headless: true, stealth: true });
+const sniff = await NetworkSniffer.attach(h.page);
+const dom = new DomScanner(h.page);
+const con = new ConsoleListener(h.page);
 
-await h.page.goto('https://example.com')
-const elements = await dom.scan()
-await selfHeal(h.page, { primary: '#missing-button', role: 'button', text: 'start' })
-  .then(({ locator }) => locator.click())
+await h.page.goto('https://example.com');
+const elements = await dom.scan();
+await selfHeal(h.page, { primary: '#missing-button', role: 'button', text: 'start' }).then(
+  ({ locator }) => locator.click(),
+);
 
-await h.close()
-console.log(sniff.events.length, 'requests captured')
+await h.close();
+console.log(sniff.events.length, 'requests captured');
 ```
 
 ## JSON-RPC API (any language)

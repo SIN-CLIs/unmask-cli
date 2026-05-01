@@ -20,6 +20,7 @@
 ## 1. Aktueller Stand
 
 ### Was funktioniert (auf main)
+
 - `unmask-network` (CDP-Sniffer mit Fallback)
 - `unmask-dom` (semantischer Scanner mit prioritisierten Selectors)
 - `unmask-console` (Console + pageerror Listener)
@@ -29,6 +30,7 @@
 - ESLint, Prettier, GH-Actions CI
 
 ### Audit-Befunde
+
 - `migrate-branches-to-main` Branch ist **0 ahead, 3 behind** main -> **stale, loeschen**.
 - 44 offene Issues — viele Epics + Sub-Issues, sauber strukturiert, aber bisher keine sichtbare Sprint-Priorisierung.
 - Kein zentrales PLAN/ROADMAP-Dokument bisher.
@@ -41,6 +43,7 @@
 **Wettbewerb:** `Stagehand` (Browserbase), `Browser Use`, `Skyvern`, `BrowserAgent`, `Multion`.
 
 **Unser USP:**
+
 1. **Sense-Layer fuer Agents** — wir sind das "Roentgengeraet", nicht der ganze Agent. Composable.
 2. **Forensic Replay** — HAR + trace.zip + screenshot timeline pro Session (#9–#13). Niemand macht das so vollstaendig.
 3. **Self-Healing-Selectors out-of-the-box** ohne LLM-Calls.
@@ -53,6 +56,7 @@
 ## 3. 90-Tage-Roadmap
 
 ### Sprint 1 — Stabilisierung & Self-Diagnostics (Woche 1–2) — **P0**
+
 - [ ] #18 postinstall hook fuer `playwright install chromium`
 - [ ] #19 `unmask doctor` self-diagnostic CLI
 - [ ] #20 Self-healing Selector Resolver in QueueManager verdrahten
@@ -60,12 +64,14 @@
 - [ ] **NEU:** Coverage-Gate >= 75 % in CI
 
 ### Sprint 2 — Forensic Replay (Woche 3–4) — **P0**
+
 - [ ] #9 Per-Session HAR-Export
 - [ ] #10 Playwright trace.zip pro Session
 - [ ] #12 Single-Zip Bundle Exporter (`unmask bundle <session>`)
 - [ ] #11 Screenshot-Timeline (jede Action + on failure)
 
 ### Sprint 3 — LLM Reasoning Layer (Woche 5–7) — **P0/P1**
+
 - [ ] #7 DOM-Tree-to-LLM Serializer (Browser-Use-Style)
 - [ ] #4 `observe(intent)` API mit ranked candidates
 - [ ] #5 `extract<T>(zodSchema)` fuer strukturierte Page-Daten
@@ -73,6 +79,7 @@
 - [ ] #8 Vision-Fallback bei DOM-Confidence < 0.5
 
 ### Sprint 4 — IPC + DX (Woche 8–10) — **P1**
+
 - [ ] #14 JSON-RPC Server ueber stdio (`unmask serve --stdio`)
 - [ ] #15 HTTP+WebSocket Server (`unmask serve --http`)
 - [ ] #16 `@unmask/schemas` als Cross-Language Shared Package
@@ -80,6 +87,7 @@
 - [ ] #17 HACKING.md Python-Recipe (playstealth ↔ unmask)
 
 ### Sprint 5 — Production Ops (Woche 11–12) — **P2**
+
 - [ ] #21 Telemetry: EUR/h Tracking + JSONL Export
 - [ ] #23 Webhook + Console Alerts on Session Failure/Completion
 - [ ] #41 Human-Input Realism (Mouse-Bezier #42, Typing #43)
@@ -87,6 +95,7 @@
 - [ ] #44 Webhook/Alert System (#45 PagerDuty)
 
 ### Ice-box
+
 - #25 typedoc + mkdocs site
 - #26 examples/ directory (consent-bypass, infinite-scroll, multi-tab)
 - #38 HTTP-API (#39, #40)
@@ -97,6 +106,7 @@
 ## 4. Definition of Done (DoD)
 
 Pro Issue / PR:
+
 - [ ] Code in `main`, kein offener Branch
 - [ ] Unit-Tests + (wenn relevant) E2E-Tests gruen
 - [ ] Coverage neuer Code >= 80 %
@@ -108,12 +118,12 @@ Pro Issue / PR:
 
 ## 5. Tech-Stack Decisions Log
 
-| Datum | Entscheidung | Begruendung |
-|---|---|---|
-| 2026-04-28 | **Single-main-Branch-Policy** | Branch-Drift eliminieren |
-| 2026-04-28 | **Forensic Replay als Hero-Feature** | Echter Differenzierer ggue. Browser-Use/Stagehand |
+| Datum      | Entscheidung                           | Begruendung                                             |
+| ---------- | -------------------------------------- | ------------------------------------------------------- |
+| 2026-04-28 | **Single-main-Branch-Policy**          | Branch-Drift eliminieren                                |
+| 2026-04-28 | **Forensic Replay als Hero-Feature**   | Echter Differenzierer ggue. Browser-Use/Stagehand       |
 | 2026-04-28 | **LLM-Layer in Sprint 3 priorisieren** | Ohne `observe/extract/act` sind wir nur ein DOM-Scanner |
-| 2026-04-28 | **Strict TS bleibt hart** | Verhindert ganze Bug-Klassen |
+| 2026-04-28 | **Strict TS bleibt hart**              | Verhindert ganze Bug-Klassen                            |
 
 ---
 
