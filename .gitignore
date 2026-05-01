@@ -43,3 +43,9 @@ coverage/
 playwright-report/
 test-results/
 .playwright/
+
+# Graphify knowledge graph cache
+# graphify-out/cache/
+
+# Graphify knowledge graph cache
+graphify-out/cache/
