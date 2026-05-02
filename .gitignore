@@ -47,3 +47,5 @@ test-results/
 # Graphify knowledge graph cache
 
 # Graphify knowledge graph cache
+
+.doctor/

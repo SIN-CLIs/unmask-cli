@@ -1,8 +1,8 @@
-# Graph Report - unmask-cli (2026-05-01)
+# Graph Report - unmask-cli (2026-05-02)
 
 ## Corpus Check
 
-- 55 files · ~25,722 words
+- 55 files · ~26,373 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
