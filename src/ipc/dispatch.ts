@@ -11,6 +11,7 @@ import { Session } from '../session/session.js';
 import { bundleSession } from '../replay/bundle.js';
 import { logger } from '../utils/logger.js';
 import { preScan } from '../commands/pre-scan.js';
+import { MacOSAXBridge } from '../detectors/macos-ax-bridge.js';
 
 export const RpcRequestSchema = z.object({
   jsonrpc: z.literal('2.0'),
@@ -221,6 +222,76 @@ export class Dispatcher {
       case 'shutdown': {
         await this.closeAll();
         return { ok: true };
+      }
+      case 'ax.windows.list': {
+        const params = parse(
+          z.object({
+            pid: z.number().int().optional(),
+            bundleId: z.string().optional(),
+            isSheet: z.boolean().optional(),
+            isDialog: z.boolean().optional(),
+            titleContains: z.string().optional(),
+          }).optional(),
+          rawParams,
+        );
+        const bridge = new MacOSAXBridge();
+        let windows = bridge.listWindows();
+        if (params?.pid) windows = windows.filter(w => w.pid === params.pid);
+        if (params?.bundleId) windows = windows.filter(w => w.bundle_id === params.bundleId);
+        if (params?.isSheet !== undefined) windows = windows.filter(w => w.is_sheet === params.isSheet);
+        if (params?.isDialog !== undefined) windows = windows.filter(w => w.is_dialog === params.isDialog);
+        if (params?.titleContains) {
+          const title = params.titleContains.toLowerCase();
+          windows = windows.filter(w => w.window_title.toLowerCase().includes(title));
+        }
+        return { windows, count: windows.length };
+      }
+      case 'ax.elements.get': {
+        const params = parse(
+          z.object({
+            pid: z.number().int(),
+            windowTitle: z.string().optional(),
+            depth: z.number().int().optional().default(10),
+          }),
+          rawParams,
+        );
+        const bridge = new MacOSAXBridge();
+        const elements = bridge.getElements(params.pid, params.windowTitle, params.depth);
+        return { elements, count: elements.length };
+      }
+      case 'ax.find.text': {
+        const params = parse(
+          z.object({
+            query: z.string(),
+          }),
+          rawParams,
+        );
+        const bridge = new MacOSAXBridge();
+        const results = bridge.findText(params.query);
+        return { matches: results, count: results.length };
+      }
+      case 'ax.click': {
+        const params = parse(
+          z.object({
+            pid: z.number().int(),
+            elementIndex: z.number().int(),
+          }),
+          rawParams,
+        );
+        const bridge = new MacOSAXBridge();
+        return bridge.clickElement(params.pid, params.elementIndex);
+      }
+      case 'ax.set_value': {
+        const params = parse(
+          z.object({
+            pid: z.number().int(),
+            elementIndex: z.number().int(),
+            value: z.string(),
+          }),
+          rawParams,
+        );
+        const bridge = new MacOSAXBridge();
+        return bridge.setValue(params.pid, params.elementIndex, params.value);
       }
       default:
         throw new Error(`Unknown method: ${method}`);

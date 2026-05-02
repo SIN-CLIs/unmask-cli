@@ -26,6 +26,7 @@ import { runStdioServer } from './ipc/stdio.js';
 import { runHttpServer } from './ipc/http.js';
 import { bundleSession } from './replay/bundle.js';
 import { isLLMAvailable } from './llm/provider.js';
+import { MacOSAXBridge } from './detectors/macos-ax-bridge.js';
 
 const program = new Command();
 
@@ -418,6 +419,126 @@ program
     const failed = checks.filter((c) => !c.ok && c.name !== 'llm-key').length;
     await emit({ checks, ok: failed === 0 });
     if (failed > 0) process.exitCode = 1;
+  });
+
+// ---- scan-screen (X-ray: Tab/Popup/Window/Overlay classifier) ---------------
+program
+  .command('scan-screen')
+  .description('Scan all windows on screen — classify Tabs/Popups/Windows/Overlays via AX + CGWindowList.')
+  .argument('[pid]', 'PID to focus on (optional, scans all)')
+  .option('--include-tree', 'Include AX tree snippets', false)
+  .option('--json', 'Raw JSON output', false)
+  .option('--filter <type>', 'Filter by UI type: all|tabs|popups|overlays|dialogs|chrome|nonchrome', 'all')
+  .action(async (pidArg: string | undefined, opts) => {
+    const { createClassifier } = await import('./detectors/screen-classifier.js');
+    const classifier = createClassifier({ includeAxTree: opts.includeTree });
+    const result = await classifier.classify(pidArg ? parseInt(pidArg) : undefined);
+
+    if (opts.json) {
+      process.stdout.write(JSON.stringify(result, null, 2) + '\n');
+      return;
+    }
+
+    const { all, active, tabs, popups, overlays, dialogs, sheets, chromeWindows } = result;
+    const f = opts.filter || 'all';
+    const items = f === 'all' ? all :
+      f === 'tabs' ? tabs : f === 'popups' ? popups :
+      f === 'overlays' ? overlays : f === 'dialogs' ? dialogs :
+      f === 'chrome' ? chromeWindows : result.nonChrome;
+
+    console.log(`\n🖥️  Screen Scan — ${all.length} windows`);
+    if (active) console.log(`   Active: ${active.appName} — "${active.title.slice(0, 50)}"`);
+    console.log(`\n📊 Summary:`);
+    console.log(`   Tabs:      ${tabs.length}  Popups:     ${popups.length}`);
+    console.log(`   Overlays:  ${overlays.length}  Sheets:     ${sheets.length}  Dialogs:   ${dialogs.length}`);
+    console.log(`   Chrome:    ${chromeWindows.length}  Non-Chrome: ${result.nonChrome.length}`);
+    console.log(`\n🔍 ${f.toUpperCase()} (${items.length}):`);
+    for (const w of items.slice(0, 30)) {
+      if (w.uiType === 'UNKNOWN') continue;
+      console.log(
+        `   [${w.uiType.padEnd(7)}] pid=${w.pid} | "${w.title.slice(0, 50)}" | ` +
+        `${w.bounds.width}x${w.bounds.height}@(${w.bounds.x},${w.bounds.y}) | role=${w.axRole || '?'}`
+      );
+    }
+    console.log();
+  });
+
+// ---- windows (macOS Accessibility - systemweite Fenstererkennung) ------------
+const windowsCmd = program.command('windows').description('macOS Accessibility window management (fusion with macos-ax-cli).');
+
+windowsCmd
+  .command('list')
+  .description('List ALL open windows system-wide (main windows, popups, sheets, dialogs)')
+  .option('--pid <pid>', 'Filter by process ID')
+  .option('--bundle <bundle>', 'Filter by bundle ID (e.g., com.google.Chrome)')
+  .option('--sheet', 'Show only macOS sheets')
+  .option('--dialog', 'Show only dialogs')
+  .option('--json', 'Output raw JSON instead of formatted table')
+  .action(async (opts) => {
+    const bridge = new MacOSAXBridge();
+    let windows = bridge.listWindows();
+
+    if (opts.pid) windows = windows.filter(w => w.pid === parseInt(opts.pid));
+    if (opts.bundle) windows = windows.filter(w => w.bundle_id === opts.bundle);
+    if (opts.sheet) windows = windows.filter(w => w.is_sheet);
+    if (opts.dialog) windows = windows.filter(w => w.is_dialog);
+
+    if (opts.json) {
+      console.log(JSON.stringify(windows, null, 2));
+      return;
+    }
+
+    console.log(`\n🖥️  System Windows — ${windows.length} found:`);
+    for (const w of windows) {
+      const type = w.is_sheet ? '📋 SHEET' : w.is_dialog ? '💬 DIALOG' : '🪟 WINDOW';
+      console.log(`   ${type} | pid=${w.pid} | ${w.app_name} | "${w.window_title.slice(0, 60)}" | ${w.bounds.width}x${w.bounds.height}@(${w.bounds.x},${w.bounds.y})`);
+    }
+    console.log();
+  });
+
+windowsCmd
+  .command('elements')
+  .description('Get accessibility elements from a specific window')
+  .argument('<pid>', 'Process ID of the app')
+  .option('--window <title>', 'Window title to filter by')
+  .option('--depth <n>', 'Max tree depth', '10')
+  .option('--json', 'Raw JSON output')
+  .action(async (pid, opts) => {
+    const bridge = new MacOSAXBridge();
+    const elements = bridge.getElements(parseInt(pid), opts.window, parseInt(opts.depth));
+
+    if (opts.json) {
+      console.log(JSON.stringify(elements, null, 2));
+      return;
+    }
+
+    console.log(`\n🔍 Elements in PID ${pid} — ${elements.length} found:`);
+    for (const el of elements) {
+      const status = el.enabled ? '✅' : '❌';
+      console.log(`   ${status} [${el.index}] ${el.role}: "${el.title}" ${el.value ? `= "${el.value}"` : ''}`);
+    }
+    console.log();
+  });
+
+windowsCmd
+  .command('find')
+  .description('Search for text across ALL open windows system-wide')
+  .argument('<query>', 'Text to search for (e.g., "Fortfahren", "Weiter")')
+  .option('--json', 'Raw JSON output')
+  .action(async (query, opts) => {
+    const bridge = new MacOSAXBridge();
+    const results = bridge.findText(query);
+
+    if (opts.json) {
+      console.log(JSON.stringify(results, null, 2));
+      return;
+    }
+
+    console.log(`\n🔎 Search "${query}" — ${results.length} matches:`);
+    for (const r of results) {
+      console.log(`   [${r.index}] ${r.role} in "${r.window_title}" (PID ${r.pid}) → "${r.matched_text}"`);
+    }
+    console.log();
   });
 
 // ---- init ------------------------------------------------------------------
