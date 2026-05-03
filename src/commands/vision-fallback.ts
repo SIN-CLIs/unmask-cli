@@ -1,5 +1,5 @@
-import { createAI } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { generateText } from 'ai';
+import { google } from '@ai-sdk/google';
 
 export interface VisionDecision {
   action: 'click' | 'type' | 'scroll' | 'drag' | 'wait' | 'done';
@@ -12,19 +12,19 @@ export interface VisionDecision {
 export async function visionFallback(
   screenshotPath: string,
   instruction: string,
-  apiKey: string
+  _apiKey: string
 ): Promise<VisionDecision> {
   const fs = await import('fs');
   const imgB64 = fs.readFileSync(screenshotPath).toString('base64');
-  const { text } = await createAI({ model: openai('gpt-4o') }).generateText({
+  const { text } = await generateText({
+    model: google('gemini-2.0-flash'),
     messages: [{
       role: 'user',
       content: [
-        { type: 'text', text: `GUI agent. ${instruction}\nJSON: {"action":"...","elementIndex":int|null,"confidence":float,"reasoning":"..."}` },
+        { type: 'text', text: `GUI agent. ${instruction}\nRespond ONLY with JSON: {"action":"...","elementIndex":int|null,"confidence":float,"reasoning":"..."}` },
         { type: 'image', image: imgB64 }
       ]
-    }],
-    maxTokens: 200
+    }]
   });
   return JSON.parse(text);
 }

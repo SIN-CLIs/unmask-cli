@@ -49,3 +49,5 @@ test-results/
 # Graphify knowledge graph cache
 
 .doctor/
+node_modules/
+.graphify/cache/
