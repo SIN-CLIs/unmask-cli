@@ -160,4 +160,51 @@ export class NetworkSniffer {
     }
     return hits;
   }
+
+  toHar(): object {
+    return {
+      log: {
+        version: '1.2',
+        creator: { name: 'unmask-cli', version: '0.1.0' },
+        entries: this.captures.map((c) => {
+          const url = new URL(c.url);
+          const queryParams: Array<{ name: string; value: string }> = [];
+          url.searchParams.forEach((value, name) => {
+            queryParams.push({ name, value });
+          });
+          const mimeType = c.contentType ?? 'application/octet-stream';
+          const bodySize = c.json ? JSON.stringify(c.json).length : c.bodyBytes ?? -1;
+          return {
+            startedDateTime: c.timestamp,
+            time: 0,
+            _unmask_keywords: c.matched,
+            request: {
+              method: c.method,
+              url: c.url,
+              httpVersion: 'HTTP/1.1',
+              headers: [],
+              queryString: queryParams,
+              headersSize: -1,
+              bodySize: -1,
+            },
+            response: {
+              status: c.status,
+              statusText: String(c.status),
+              httpVersion: 'HTTP/1.1',
+              headers: c.contentType ? [{ name: 'Content-Type', value: c.contentType }] : [],
+              content: {
+                size: bodySize,
+                mimeType,
+                ...(c.json !== undefined ? { text: JSON.stringify(c.json) } : {}),
+              },
+              redirectURL: '',
+              headersSize: -1,
+              bodySize,
+            },
+            timings: { send: 0, wait: 0, receive: 0 },
+          };
+        }),
+      },
+    };
+  }
 }

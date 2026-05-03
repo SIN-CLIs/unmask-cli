@@ -373,6 +373,29 @@ program
     await emit({ bundle: result });
   });
 
+// ---- har -------------------------------------------------------------------
+program
+  .command('har')
+  .description('Export captured network traffic as HAR 1.2 JSON (issue #9).')
+  .argument('<url>', 'Page URL to capture')
+  .option('--headful', 'launch a visible browser', false)
+  .option('--wait-ms <ms>', 'wait after navigation in ms', '5000')
+  .option('-o, --output <path>', 'write HAR JSON to this path')
+  .action(async (url: string, opts) => {
+    const handle = await launchBrowser({ headless: !opts.headful });
+    const sniffer = new NetworkSniffer();
+    try {
+      await sniffer.attach(handle.page);
+      await handle.page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60_000 });
+      await handle.page.waitForTimeout(Number(opts.waitMs) || 5_000);
+      const har = sniffer.toHar();
+      await emit(har, opts.output);
+    } finally {
+      await sniffer.detach();
+      await handle.close();
+    }
+  });
+
 // ---- doctor ----------------------------------------------------------------
 program
   .command('doctor')
