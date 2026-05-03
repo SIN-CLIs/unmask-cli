@@ -9,7 +9,7 @@
       "source_file": "vitest.config.ts",
       "source_location": "L1",
       "id": "vitest_config_ts",
-      "community": 18,
+      "community": 22,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "tests/dispatch.test.ts",
       "source_location": "L1",
       "id": "tests_dispatch_test_ts",
-      "community": 4,
+      "community": 0,
       "norm_label": "dispatch.test.ts"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "tests/telemetry.test.ts",
       "source_location": "L1",
       "id": "tests_telemetry_test_ts",
-      "community": 0,
+      "community": 11,
       "norm_label": "telemetry.test.ts"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "tests/telemetry.test.ts",
       "source_location": "L4",
       "id": "tests_telemetry_test_survey",
-      "community": 0,
+      "community": 11,
       "norm_label": "survey()"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "tests/serialize.test.ts",
       "source_location": "L1",
       "id": "tests_serialize_test_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "serialize.test.ts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "tests/serialize.test.ts",
       "source_location": "L4",
       "id": "tests_serialize_test_fakepage",
-      "community": 2,
+      "community": 0,
       "norm_label": "fakepage()"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "tests/e2e.test.ts",
       "source_location": "L1",
       "id": "tests_e2e_test_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "e2e.test.ts"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "tests/smoke.test.ts",
       "source_location": "L1",
       "id": "tests_smoke_test_ts",
-      "community": 19,
+      "community": 23,
       "norm_label": "smoke.test.ts"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "tests/jitter.test.ts",
       "source_location": "L1",
       "id": "tests_jitter_test_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "jitter.test.ts"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "tests/bundle.test.ts",
       "source_location": "L1",
       "id": "tests_bundle_test_ts",
-      "community": 4,
+      "community": 7,
       "norm_label": "bundle.test.ts"
     },
     {
@@ -387,7 +387,7 @@
       "source_file": "scripts/api-push.mjs",
       "source_location": "L1",
       "id": "scripts_api_push_mjs",
-      "community": 13,
+      "community": 16,
       "norm_label": "api-push.mjs"
     },
     {
@@ -396,7 +396,7 @@
       "source_file": "scripts/api-push.mjs",
       "source_location": "L30",
       "id": "scripts_api_push_api",
-      "community": 13,
+      "community": 16,
       "norm_label": "api()"
     },
     {
@@ -405,7 +405,7 @@
       "source_file": "scripts/api-push.mjs",
       "source_location": "L60",
       "id": "scripts_api_push_walk",
-      "community": 13,
+      "community": 16,
       "norm_label": "walk()"
     },
     {
@@ -414,7 +414,7 @@
       "source_file": "scripts/api-push.mjs",
       "source_location": "L74",
       "id": "scripts_api_push_main",
-      "community": 13,
+      "community": 16,
       "norm_label": "main()"
     },
     {
@@ -423,7 +423,7 @@
       "source_file": "scripts/create-issues.mjs",
       "source_location": "L1",
       "id": "scripts_create_issues_mjs",
-      "community": 16,
+      "community": 20,
       "norm_label": "create-issues.mjs"
     },
     {
@@ -432,7 +432,7 @@
       "source_file": "scripts/create-issues.mjs",
       "source_location": "L24",
       "id": "scripts_create_issues_gh",
-      "community": 16,
+      "community": 20,
       "norm_label": "gh()"
     },
     {
@@ -441,7 +441,7 @@
       "source_file": "scripts/create-issues.mjs",
       "source_location": "L62",
       "id": "scripts_create_issues_ensurelabel",
-      "community": 16,
+      "community": 20,
       "norm_label": "ensurelabel()"
     },
     {
@@ -450,7 +450,7 @@
       "source_file": "scripts/postinstall.mjs",
       "source_location": "L1",
       "id": "scripts_postinstall_mjs",
-      "community": 20,
+      "community": 24,
       "norm_label": "postinstall.mjs"
     },
     {
@@ -466,7 +466,7 @@
       "label": "pickMixed()",
       "file_type": "code",
       "source_file": "src/cli.ts",
-      "source_location": "L438",
+      "source_location": "L559",
       "id": "src_cli_pickmixed",
       "community": 0,
       "norm_label": "pickmixed()"
@@ -475,7 +475,7 @@
       "label": "emit()",
       "file_type": "code",
       "source_file": "src/cli.ts",
-      "source_location": "L448",
+      "source_location": "L569",
       "id": "src_cli_emit",
       "community": 0,
       "norm_label": "emit()"
@@ -486,7 +486,7 @@
       "source_file": "src/index.ts",
       "source_location": "L1",
       "id": "src_index_ts",
-      "community": 21,
+      "community": 25,
       "norm_label": "index.ts"
     },
     {
@@ -495,7 +495,7 @@
       "source_file": "src/semver.ts",
       "source_location": "L1",
       "id": "src_semver_ts",
-      "community": 22,
+      "community": 26,
       "norm_label": "semver.ts"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "src/llm/extract.ts",
       "source_location": "L1",
       "id": "src_llm_extract_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "extract.ts"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "src/llm/extract.ts",
       "source_location": "L22",
       "id": "llm_extract_extract",
-      "community": 2,
+      "community": 4,
       "norm_label": "extract()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "src/llm/act.ts",
       "source_location": "L1",
       "id": "src_llm_act_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "act.ts"
     },
     {
@@ -531,7 +531,7 @@
       "source_file": "src/llm/act.ts",
       "source_location": "L43",
       "id": "llm_act_act",
-      "community": 2,
+      "community": 4,
       "norm_label": "act()"
     },
     {
@@ -540,7 +540,7 @@
       "source_file": "src/llm/act.ts",
       "source_location": "L112",
       "id": "llm_act_planfromtext",
-      "community": 2,
+      "community": 4,
       "norm_label": "planfromtext()"
     },
     {
@@ -549,7 +549,7 @@
       "source_file": "src/llm/observe.ts",
       "source_location": "L1",
       "id": "src_llm_observe_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "observe.ts"
     },
     {
@@ -558,7 +558,7 @@
       "source_file": "src/llm/observe.ts",
       "source_location": "L33",
       "id": "llm_observe_observe",
-      "community": 2,
+      "community": 4,
       "norm_label": "observe()"
     },
     {
@@ -567,7 +567,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L1",
       "id": "src_llm_provider_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "provider.ts"
     },
     {
@@ -576,7 +576,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L15",
       "id": "llm_provider_isllmavailable",
-      "community": 2,
+      "community": 10,
       "norm_label": "isllmavailable()"
     },
     {
@@ -585,7 +585,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L27",
       "id": "llm_provider_llm",
-      "community": 2,
+      "community": 10,
       "norm_label": "llm"
     },
     {
@@ -594,7 +594,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L30",
       "id": "llm_provider_llm_constructor",
-      "community": 2,
+      "community": 10,
       "norm_label": ".constructor()"
     },
     {
@@ -603,7 +603,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L39",
       "id": "llm_provider_llm_enabled",
-      "community": 2,
+      "community": 10,
       "norm_label": ".enabled()"
     },
     {
@@ -612,7 +612,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L43",
       "id": "llm_provider_llm_generateobject",
-      "community": 2,
+      "community": 10,
       "norm_label": ".generateobject()"
     },
     {
@@ -621,7 +621,7 @@
       "source_file": "src/llm/provider.ts",
       "source_location": "L76",
       "id": "llm_provider_llm_generatetext",
-      "community": 2,
+      "community": 10,
       "norm_label": ".generatetext()"
     },
     {
@@ -630,7 +630,7 @@
       "source_file": "src/llm/serialize.ts",
       "source_location": "L1",
       "id": "src_llm_serialize_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "serialize.ts"
     },
     {
@@ -639,7 +639,7 @@
       "source_file": "src/llm/serialize.ts",
       "source_location": "L19",
       "id": "llm_serialize_serializeforllm",
-      "community": 2,
+      "community": 4,
       "norm_label": "serializeforllm()"
     },
     {
@@ -774,7 +774,7 @@
       "source_file": "src/utils/notify.ts",
       "source_location": "L21",
       "id": "utils_notify_notifier",
-      "community": 0,
+      "community": 17,
       "norm_label": "notifier"
     },
     {
@@ -783,7 +783,7 @@
       "source_file": "src/utils/notify.ts",
       "source_location": "L22",
       "id": "utils_notify_notifier_constructor",
-      "community": 0,
+      "community": 17,
       "norm_label": ".constructor()"
     },
     {
@@ -792,7 +792,7 @@
       "source_file": "src/utils/notify.ts",
       "source_location": "L24",
       "id": "utils_notify_notifier_send",
-      "community": 0,
+      "community": 17,
       "norm_label": ".send()"
     },
     {
@@ -801,7 +801,7 @@
       "source_file": "src/utils/notify.ts",
       "source_location": "L40",
       "id": "utils_notify_post",
-      "community": 0,
+      "community": 17,
       "norm_label": "post()"
     },
     {
@@ -810,7 +810,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L1",
       "id": "src_utils_jitter_ts",
-      "community": 3,
+      "community": 2,
       "norm_label": "jitter.ts"
     },
     {
@@ -819,7 +819,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L14",
       "id": "utils_jitter_randomint",
-      "community": 3,
+      "community": 2,
       "norm_label": "randomint()"
     },
     {
@@ -828,7 +828,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L19",
       "id": "utils_jitter_jitterms",
-      "community": 3,
+      "community": 2,
       "norm_label": "jitterms()"
     },
     {
@@ -837,7 +837,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L23",
       "id": "utils_jitter_sleep",
-      "community": 3,
+      "community": 2,
       "norm_label": "sleep()"
     },
     {
@@ -846,7 +846,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L28",
       "id": "utils_jitter_microjitter",
-      "community": 3,
+      "community": 2,
       "norm_label": "microjitter()"
     },
     {
@@ -855,7 +855,7 @@
       "source_file": "src/utils/jitter.ts",
       "source_location": "L34",
       "id": "utils_jitter_humanpause",
-      "community": 3,
+      "community": 2,
       "norm_label": "humanpause()"
     },
     {
@@ -891,7 +891,7 @@
       "source_file": "src/schemas/index.ts",
       "source_location": "L1",
       "id": "src_schemas_index_ts",
-      "community": 23,
+      "community": 27,
       "norm_label": "index.ts"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "src/schemas/queue.ts",
       "source_location": "L50",
       "id": "schemas_queue_emptyqueuestate",
-      "community": 9,
+      "community": 0,
       "norm_label": "emptyqueuestate()"
     },
     {
@@ -963,7 +963,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L23",
       "id": "queue_state_statestore",
-      "community": 9,
+      "community": 13,
       "norm_label": "statestore"
     },
     {
@@ -972,7 +972,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L28",
       "id": "queue_state_statestore_constructor",
-      "community": 9,
+      "community": 13,
       "norm_label": ".constructor()"
     },
     {
@@ -981,7 +981,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L34",
       "id": "queue_state_statestore_ensuredir",
-      "community": 9,
+      "community": 13,
       "norm_label": ".ensuredir()"
     },
     {
@@ -990,7 +990,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L38",
       "id": "queue_state_statestore_load",
-      "community": 9,
+      "community": 13,
       "norm_label": ".load()"
     },
     {
@@ -999,7 +999,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L72",
       "id": "queue_state_statestore_save",
-      "community": 9,
+      "community": 13,
       "norm_label": ".save()"
     },
     {
@@ -1008,7 +1008,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L81",
       "id": "queue_state_statestore_loadblacklist",
-      "community": 9,
+      "community": 13,
       "norm_label": ".loadblacklist()"
     },
     {
@@ -1017,7 +1017,7 @@
       "source_file": "src/queue/state.ts",
       "source_location": "L98",
       "id": "queue_state_statestore_appendblacklist",
-      "community": 9,
+      "community": 13,
       "norm_label": ".appendblacklist()"
     },
     {
@@ -1035,7 +1035,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L47",
       "id": "queue_manager_queuemanager",
-      "community": 3,
+      "community": 2,
       "norm_label": "queuemanager"
     },
     {
@@ -1044,7 +1044,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L50",
       "id": "queue_manager_queuemanager_constructor",
-      "community": 3,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L52",
       "id": "queue_manager_queuemanager_load",
-      "community": 3,
+      "community": 2,
       "norm_label": ".load()"
     },
     {
@@ -1062,7 +1062,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L57",
       "id": "queue_manager_queuemanager_s",
-      "community": 3,
+      "community": 2,
       "norm_label": ".s()"
     },
     {
@@ -1071,7 +1071,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L62",
       "id": "queue_manager_queuemanager_addsurveys",
-      "community": 3,
+      "community": 2,
       "norm_label": ".addsurveys()"
     },
     {
@@ -1080,7 +1080,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L81",
       "id": "queue_manager_queuemanager_blacklist",
-      "community": 3,
+      "community": 2,
       "norm_label": ".blacklist()"
     },
     {
@@ -1089,7 +1089,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L94",
       "id": "queue_manager_queuemanager_clear",
-      "community": 3,
+      "community": 2,
       "norm_label": ".clear()"
     },
     {
@@ -1098,7 +1098,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L102",
       "id": "queue_manager_queuemanager_run",
-      "community": 3,
+      "community": 2,
       "norm_label": ".run()"
     },
     {
@@ -1107,7 +1107,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L182",
       "id": "queue_manager_queuemanager_cleanupafterdq",
-      "community": 3,
+      "community": 2,
       "norm_label": ".cleanupafterdq()"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L198",
       "id": "queue_manager_queuemanager_snapshot",
-      "community": 3,
+      "community": 2,
       "norm_label": ".snapshot()"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "src/queue/manager.ts",
       "source_location": "L203",
       "id": "queue_manager_mapoutcometostatus",
-      "community": 3,
+      "community": 2,
       "norm_label": "mapoutcometostatus()"
     },
     {
@@ -1161,7 +1161,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L1",
       "id": "src_queue_telemetry_ts",
-      "community": 0,
+      "community": 11,
       "norm_label": "telemetry.ts"
     },
     {
@@ -1170,7 +1170,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L30",
       "id": "queue_telemetry_telemetry",
-      "community": 0,
+      "community": 11,
       "norm_label": "telemetry"
     },
     {
@@ -1179,7 +1179,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L34",
       "id": "queue_telemetry_telemetry_recordresult",
-      "community": 0,
+      "community": 11,
       "norm_label": ".recordresult()"
     },
     {
@@ -1188,7 +1188,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L51",
       "id": "queue_telemetry_telemetry_summary",
-      "community": 0,
+      "community": 11,
       "norm_label": ".summary()"
     },
     {
@@ -1197,7 +1197,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L85",
       "id": "queue_telemetry_telemetry_tojsonl",
-      "community": 0,
+      "community": 11,
       "norm_label": ".tojsonl()"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_file": "src/queue/telemetry.ts",
       "source_location": "L90",
       "id": "queue_telemetry_toeuros",
-      "community": 0,
+      "community": 11,
       "norm_label": "toeuros()"
     },
     {
@@ -1251,14 +1251,14 @@
       "source_file": "src/ipc/dispatch.ts",
       "source_location": "L1",
       "id": "src_ipc_dispatch_ts",
-      "community": 4,
+      "community": 0,
       "norm_label": "dispatch.ts"
     },
     {
       "label": "Dispatcher",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "ipc_dispatch_dispatcher",
       "community": 4,
       "norm_label": "dispatcher"
@@ -1267,7 +1267,7 @@
       "label": ".dispatch()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "ipc_dispatch_dispatcher_dispatch",
       "community": 4,
       "norm_label": ".dispatch()"
@@ -1276,7 +1276,7 @@
       "label": ".invoke()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L70",
+      "source_location": "L71",
       "id": "ipc_dispatch_dispatcher_invoke",
       "community": 4,
       "norm_label": ".invoke()"
@@ -1285,7 +1285,7 @@
       "label": ".openPage()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L230",
+      "source_location": "L301",
       "id": "ipc_dispatch_dispatcher_openpage",
       "community": 4,
       "norm_label": ".openpage()"
@@ -1294,7 +1294,7 @@
       "label": ".closeAll()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L275",
+      "source_location": "L346",
       "id": "ipc_dispatch_dispatcher_closeall",
       "community": 4,
       "norm_label": ".closeall()"
@@ -1303,7 +1303,7 @@
       "label": ".requireHandle()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L287",
+      "source_location": "L358",
       "id": "ipc_dispatch_dispatcher_requirehandle",
       "community": 4,
       "norm_label": ".requirehandle()"
@@ -1312,10 +1312,37 @@
       "label": "parse()",
       "file_type": "code",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L294",
+      "source_location": "L365",
       "id": "ipc_dispatch_parse",
       "community": 4,
       "norm_label": "parse()"
+    },
+    {
+      "label": "scan-screen.ts",
+      "file_type": "code",
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L1",
+      "id": "src_commands_scan_screen_ts",
+      "community": 3,
+      "norm_label": "scan-screen.ts"
+    },
+    {
+      "label": "builder()",
+      "file_type": "code",
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L7",
+      "id": "commands_scan_screen_builder",
+      "community": 3,
+      "norm_label": "builder()"
+    },
+    {
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L19",
+      "id": "commands_scan_screen_handler",
+      "community": 3,
+      "norm_label": "handler()"
     },
     {
       "label": "screenshot-timeline.ts",
@@ -1323,7 +1350,7 @@
       "source_file": "src/commands/screenshot-timeline.ts",
       "source_location": "L1",
       "id": "src_commands_screenshot_timeline_ts",
-      "community": 12,
+      "community": 15,
       "norm_label": "screenshot-timeline.ts"
     },
     {
@@ -1332,7 +1359,7 @@
       "source_file": "src/commands/screenshot-timeline.ts",
       "source_location": "L7",
       "id": "commands_screenshot_timeline_screenshottimeline",
-      "community": 12,
+      "community": 15,
       "norm_label": "screenshottimeline"
     },
     {
@@ -1341,7 +1368,7 @@
       "source_file": "src/commands/screenshot-timeline.ts",
       "source_location": "L10",
       "id": "commands_screenshot_timeline_screenshottimeline_constructor",
-      "community": 12,
+      "community": 15,
       "norm_label": ".constructor()"
     },
     {
@@ -1350,7 +1377,7 @@
       "source_file": "src/commands/screenshot-timeline.ts",
       "source_location": "L11",
       "id": "commands_screenshot_timeline_screenshottimeline_capture",
-      "community": 12,
+      "community": 15,
       "norm_label": ".capture()"
     },
     {
@@ -1359,7 +1386,7 @@
       "source_file": "src/commands/screenshot-timeline.ts",
       "source_location": "L20",
       "id": "commands_screenshot_timeline_screenshottimeline_getentries",
-      "community": 12,
+      "community": 15,
       "norm_label": ".getentries()"
     },
     {
@@ -1458,7 +1485,7 @@
       "source_file": "src/commands/vision-fallback.ts",
       "source_location": "L1",
       "id": "src_commands_vision_fallback_ts",
-      "community": 17,
+      "community": 10,
       "norm_label": "vision-fallback.ts"
     },
     {
@@ -1467,7 +1494,7 @@
       "source_file": "src/commands/vision-fallback.ts",
       "source_location": "L12",
       "id": "commands_vision_fallback_visionfallback",
-      "community": 17,
+      "community": 10,
       "norm_label": "visionfallback()"
     },
     {
@@ -1476,7 +1503,7 @@
       "source_file": "src/replay/bundle.ts",
       "source_location": "L1",
       "id": "src_replay_bundle_ts",
-      "community": 4,
+      "community": 7,
       "norm_label": "bundle.ts"
     },
     {
@@ -1485,7 +1512,7 @@
       "source_file": "src/replay/bundle.ts",
       "source_location": "L11",
       "id": "replay_bundle_bundlesession",
-      "community": 4,
+      "community": 7,
       "norm_label": "bundlesession()"
     },
     {
@@ -1494,8 +1521,242 @@
       "source_file": "src/replay/bundle.ts",
       "source_location": "L29",
       "id": "replay_bundle_sessionartifactpaths",
-      "community": 4,
+      "community": 7,
       "norm_label": "sessionartifactpaths()"
+    },
+    {
+      "label": "screen-classifier.ts",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L1",
+      "id": "src_detectors_screen_classifier_ts",
+      "community": 3,
+      "norm_label": "screen-classifier.ts"
+    },
+    {
+      "label": "RUN_APPLESCRIPT()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L6",
+      "id": "detectors_screen_classifier_run_applescript",
+      "community": 3,
+      "norm_label": "run_applescript()"
+    },
+    {
+      "label": "ScreenClassifier",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L18",
+      "id": "detectors_screen_classifier_screenclassifier",
+      "community": 3,
+      "norm_label": "screenclassifier"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L21",
+      "id": "detectors_screen_classifier_screenclassifier_constructor",
+      "community": 3,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".classify()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L30",
+      "id": "detectors_screen_classifier_screenclassifier_classify",
+      "community": 3,
+      "norm_label": ".classify()"
+    },
+    {
+      "label": ".classifyBrowserWindow()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L152",
+      "id": "detectors_screen_classifier_screenclassifier_classifybrowserwindow",
+      "community": 3,
+      "norm_label": ".classifybrowserwindow()"
+    },
+    {
+      "label": ".getAxRole()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L192",
+      "id": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "community": 3,
+      "norm_label": ".getaxrole()"
+    },
+    {
+      "label": ".parseRawWindows()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L213",
+      "id": "detectors_screen_classifier_screenclassifier_parserawwindows",
+      "community": 3,
+      "norm_label": ".parserawwindows()"
+    },
+    {
+      "label": ".isIncognito()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L242",
+      "id": "detectors_screen_classifier_screenclassifier_isincognito",
+      "community": 3,
+      "norm_label": ".isincognito()"
+    },
+    {
+      "label": ".detectActiveTab()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L251",
+      "id": "detectors_screen_classifier_screenclassifier_detectactivetab",
+      "community": 3,
+      "norm_label": ".detectactivetab()"
+    },
+    {
+      "label": ".detectPopup()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L259",
+      "id": "detectors_screen_classifier_screenclassifier_detectpopup",
+      "community": 3,
+      "norm_label": ".detectpopup()"
+    },
+    {
+      "label": ".listAllWindows()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L264",
+      "id": "detectors_screen_classifier_screenclassifier_listallwindows",
+      "community": 3,
+      "norm_label": ".listallwindows()"
+    },
+    {
+      "label": "createClassifier()",
+      "file_type": "code",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L269",
+      "id": "detectors_screen_classifier_createclassifier",
+      "community": 3,
+      "norm_label": "createclassifier()"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "src/detectors/types.ts",
+      "source_location": "L1",
+      "id": "src_detectors_types_ts",
+      "community": 28,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "macos-ax-bridge.ts",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L1",
+      "id": "src_detectors_macos_ax_bridge_ts",
+      "community": 0,
+      "norm_label": "macos-ax-bridge.ts"
+    },
+    {
+      "label": "MacOSAXBridge",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L38",
+      "id": "detectors_macos_ax_bridge_macosaxbridge",
+      "community": 8,
+      "norm_label": "macosaxbridge"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L41",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_constructor",
+      "community": 8,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".listWindows()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L54",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "community": 8,
+      "norm_label": ".listwindows()"
+    },
+    {
+      "label": ".getElements()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L63",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_getelements",
+      "community": 8,
+      "norm_label": ".getelements()"
+    },
+    {
+      "label": ".findText()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L76",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_findtext",
+      "community": 8,
+      "norm_label": ".findtext()"
+    },
+    {
+      "label": ".clickElement()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L85",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_clickelement",
+      "community": 8,
+      "norm_label": ".clickelement()"
+    },
+    {
+      "label": ".setValue()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L97",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_setvalue",
+      "community": 8,
+      "norm_label": ".setvalue()"
+    },
+    {
+      "label": ".screenshotLabeled()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L110",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_screenshotlabeled",
+      "community": 8,
+      "norm_label": ".screenshotlabeled()"
+    },
+    {
+      "label": ".filterWindows()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L119",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_filterwindows",
+      "community": 8,
+      "norm_label": ".filterwindows()"
+    },
+    {
+      "label": ".getWindowsByPid()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L133",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_getwindowsbypid",
+      "community": 8,
+      "norm_label": ".getwindowsbypid()"
+    },
+    {
+      "label": ".runAXCommand()",
+      "file_type": "code",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L140",
+      "id": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "community": 8,
+      "norm_label": ".runaxcommand()"
     },
     {
       "label": "dom.ts",
@@ -1503,7 +1764,7 @@
       "source_file": "src/modules/dom.ts",
       "source_location": "L1",
       "id": "src_modules_dom_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "dom.ts"
     },
     {
@@ -1512,7 +1773,7 @@
       "source_file": "src/modules/dom.ts",
       "source_location": "L32",
       "id": "modules_dom_domscanner",
-      "community": 2,
+      "community": 21,
       "norm_label": "domscanner"
     },
     {
@@ -1521,7 +1782,7 @@
       "source_file": "src/modules/dom.ts",
       "source_location": "L35",
       "id": "modules_dom_domscanner_constructor",
-      "community": 2,
+      "community": 21,
       "norm_label": ".constructor()"
     },
     {
@@ -1530,7 +1791,7 @@
       "source_file": "src/modules/dom.ts",
       "source_location": "L42",
       "id": "modules_dom_domscanner_scan",
-      "community": 2,
+      "community": 21,
       "norm_label": ".scan()"
     },
     {
@@ -1548,7 +1809,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L42",
       "id": "modules_network_networksniffer",
-      "community": 10,
+      "community": 14,
       "norm_label": "networksniffer"
     },
     {
@@ -1557,7 +1818,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L51",
       "id": "modules_network_networksniffer_constructor",
-      "community": 10,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -1566,7 +1827,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L60",
       "id": "modules_network_networksniffer_attach",
-      "community": 10,
+      "community": 14,
       "norm_label": ".attach()"
     },
     {
@@ -1575,7 +1836,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L132",
       "id": "modules_network_networksniffer_detach",
-      "community": 10,
+      "community": 14,
       "norm_label": ".detach()"
     },
     {
@@ -1584,7 +1845,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L143",
       "id": "modules_network_networksniffer_results",
-      "community": 10,
+      "community": 14,
       "norm_label": ".results()"
     },
     {
@@ -1593,7 +1854,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L148",
       "id": "modules_network_networksniffer_topcandidates",
-      "community": 10,
+      "community": 14,
       "norm_label": ".topcandidates()"
     },
     {
@@ -1602,7 +1863,7 @@
       "source_file": "src/modules/network.ts",
       "source_location": "L155",
       "id": "modules_network_networksniffer_matchkeywords",
-      "community": 10,
+      "community": 14,
       "norm_label": ".matchkeywords()"
     },
     {
@@ -1611,7 +1872,7 @@
       "source_file": "src/modules/selectors.ts",
       "source_location": "L1",
       "id": "src_modules_selectors_ts",
-      "community": 2,
+      "community": 0,
       "norm_label": "selectors.ts"
     },
     {
@@ -1620,7 +1881,7 @@
       "source_file": "src/modules/selectors.ts",
       "source_location": "L34",
       "id": "modules_selectors_selfheal",
-      "community": 2,
+      "community": 4,
       "norm_label": "selfheal()"
     },
     {
@@ -1629,7 +1890,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L1",
       "id": "src_modules_console_ts",
-      "community": 7,
+      "community": 0,
       "norm_label": "console.ts"
     },
     {
@@ -1638,7 +1899,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L25",
       "id": "modules_console_consolelistener",
-      "community": 7,
+      "community": 12,
       "norm_label": "consolelistener"
     },
     {
@@ -1647,7 +1908,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L29",
       "id": "modules_console_consolelistener_constructor",
-      "community": 7,
+      "community": 12,
       "norm_label": ".constructor()"
     },
     {
@@ -1656,7 +1917,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L36",
       "id": "modules_console_consolelistener_attach",
-      "community": 7,
+      "community": 12,
       "norm_label": ".attach()"
     },
     {
@@ -1665,7 +1926,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L49",
       "id": "modules_console_consolelistener_handle",
-      "community": 7,
+      "community": 12,
       "norm_label": ".handle()"
     },
     {
@@ -1674,7 +1935,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L63",
       "id": "modules_console_consolelistener_push",
-      "community": 7,
+      "community": 12,
       "norm_label": ".push()"
     },
     {
@@ -1683,7 +1944,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L67",
       "id": "modules_console_consolelistener_tag",
-      "community": 7,
+      "community": 12,
       "norm_label": ".tag()"
     },
     {
@@ -1692,7 +1953,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L75",
       "id": "modules_console_consolelistener_results",
-      "community": 7,
+      "community": 12,
       "norm_label": ".results()"
     },
     {
@@ -1701,7 +1962,7 @@
       "source_file": "src/modules/console.ts",
       "source_location": "L80",
       "id": "modules_console_maplevel",
-      "community": 7,
+      "community": 12,
       "norm_label": "maplevel()"
     },
     {
@@ -1710,7 +1971,7 @@
       "source_file": "src/modules/survey/trap-scanner.ts",
       "source_location": "L1",
       "id": "src_modules_survey_trap_scanner_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "trap-scanner.ts"
     },
     {
@@ -1719,7 +1980,7 @@
       "source_file": "src/modules/survey/trap-scanner.ts",
       "source_location": "L28",
       "id": "survey_trap_scanner_trapscanner",
-      "community": 8,
+      "community": 9,
       "norm_label": "trapscanner"
     },
     {
@@ -1728,7 +1989,7 @@
       "source_file": "src/modules/survey/trap-scanner.ts",
       "source_location": "L29",
       "id": "survey_trap_scanner_trapscanner_scan",
-      "community": 8,
+      "community": 9,
       "norm_label": ".scan()"
     },
     {
@@ -1737,7 +1998,7 @@
       "source_file": "src/modules/survey/reward-estimator.ts",
       "source_location": "L1",
       "id": "src_modules_survey_reward_estimator_ts",
-      "community": 14,
+      "community": 18,
       "norm_label": "reward-estimator.ts"
     },
     {
@@ -1746,7 +2007,7 @@
       "source_file": "src/modules/survey/reward-estimator.ts",
       "source_location": "L20",
       "id": "survey_reward_estimator_rewardestimator",
-      "community": 14,
+      "community": 18,
       "norm_label": "rewardestimator"
     },
     {
@@ -1755,7 +2016,7 @@
       "source_file": "src/modules/survey/reward-estimator.ts",
       "source_location": "L24",
       "id": "survey_reward_estimator_rewardestimator_estimate",
-      "community": 14,
+      "community": 18,
       "norm_label": ".estimate()"
     },
     {
@@ -1764,7 +2025,7 @@
       "source_file": "src/modules/survey/reward-estimator.ts",
       "source_location": "L86",
       "id": "survey_reward_estimator_rewardestimator_rank",
-      "community": 14,
+      "community": 18,
       "norm_label": ".rank()"
     },
     {
@@ -1773,7 +2034,7 @@
       "source_file": "src/modules/survey/question-classifier.ts",
       "source_location": "L1",
       "id": "src_modules_survey_question_classifier_ts",
-      "community": 15,
+      "community": 19,
       "norm_label": "question-classifier.ts"
     },
     {
@@ -1782,7 +2043,7 @@
       "source_file": "src/modules/survey/question-classifier.ts",
       "source_location": "L31",
       "id": "survey_question_classifier_questionclassifier",
-      "community": 15,
+      "community": 19,
       "norm_label": "questionclassifier"
     },
     {
@@ -1791,7 +2052,7 @@
       "source_file": "src/modules/survey/question-classifier.ts",
       "source_location": "L32",
       "id": "survey_question_classifier_questionclassifier_classify",
-      "community": 15,
+      "community": 19,
       "norm_label": ".classify()"
     },
     {
@@ -1800,7 +2061,7 @@
       "source_file": "src/modules/survey/question-classifier.ts",
       "source_location": "L83",
       "id": "survey_question_classifier_questionclassifier_primary",
-      "community": 15,
+      "community": 19,
       "norm_label": ".primary()"
     },
     {
@@ -1809,7 +2070,7 @@
       "source_file": "src/modules/survey/panel-detector.ts",
       "source_location": "L1",
       "id": "src_modules_survey_panel_detector_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "panel-detector.ts"
     },
     {
@@ -1818,7 +2079,7 @@
       "source_file": "src/modules/survey/panel-detector.ts",
       "source_location": "L93",
       "id": "survey_panel_detector_paneldetector",
-      "community": 8,
+      "community": 9,
       "norm_label": "paneldetector"
     },
     {
@@ -1827,7 +2088,7 @@
       "source_file": "src/modules/survey/panel-detector.ts",
       "source_location": "L94",
       "id": "survey_panel_detector_paneldetector_detect",
-      "community": 8,
+      "community": 9,
       "norm_label": ".detect()"
     },
     {
@@ -1836,7 +2097,7 @@
       "source_file": "src/modules/survey/index.ts",
       "source_location": "L1",
       "id": "src_modules_survey_index_ts",
-      "community": 24,
+      "community": 29,
       "norm_label": "index.ts"
     },
     {
@@ -1845,7 +2106,7 @@
       "source_file": "src/modules/survey/risk-assessor.ts",
       "source_location": "L1",
       "id": "src_modules_survey_risk_assessor_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "risk-assessor.ts"
     },
     {
@@ -1854,7 +2115,7 @@
       "source_file": "src/modules/survey/risk-assessor.ts",
       "source_location": "L33",
       "id": "survey_risk_assessor_riskassessor",
-      "community": 8,
+      "community": 9,
       "norm_label": "riskassessor"
     },
     {
@@ -1863,7 +2124,7 @@
       "source_file": "src/modules/survey/risk-assessor.ts",
       "source_location": "L34",
       "id": "survey_risk_assessor_riskassessor_assess",
-      "community": 8,
+      "community": 9,
       "norm_label": ".assess()"
     },
     {
@@ -1872,7 +2133,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L1",
       "id": "src_session_session_ts",
-      "community": 4,
+      "community": 7,
       "norm_label": "session.ts"
     },
     {
@@ -1881,7 +2142,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L41",
       "id": "session_session_session",
-      "community": 11,
+      "community": 7,
       "norm_label": "session"
     },
     {
@@ -1890,7 +2151,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L54",
       "id": "session_session_session_constructor",
-      "community": 11,
+      "community": 7,
       "norm_label": ".constructor()"
     },
     {
@@ -1899,7 +2160,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L66",
       "id": "session_session_session_init",
-      "community": 11,
+      "community": 7,
       "norm_label": ".init()"
     },
     {
@@ -1908,7 +2169,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L83",
       "id": "session_session_session_append",
-      "community": 11,
+      "community": 7,
       "norm_label": ".append()"
     },
     {
@@ -1917,7 +2178,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L92",
       "id": "session_session_session_nextscreenshotpath",
-      "community": 11,
+      "community": 7,
       "norm_label": ".nextscreenshotpath()"
     },
     {
@@ -1926,7 +2187,7 @@
       "source_file": "src/session/session.ts",
       "source_location": "L97",
       "id": "session_session_session_end",
-      "community": 11,
+      "community": 7,
       "norm_label": ".end()"
     }
   ],
@@ -2952,10 +3213,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/cli.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "src_cli_ts",
+      "_tgt": "src_detectors_macos_ax_bridge_ts",
+      "source": "src_cli_ts",
+      "target": "src_detectors_macos_ax_bridge_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/cli.ts",
-      "source_location": "L438",
+      "source_location": "L559",
       "weight": 1.0,
       "_src": "src_cli_ts",
       "_tgt": "src_cli_pickmixed",
@@ -2967,7 +3240,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/cli.ts",
-      "source_location": "L448",
+      "source_location": "L569",
       "weight": 1.0,
       "_src": "src_cli_ts",
       "_tgt": "src_cli_emit",
@@ -3346,6 +3619,18 @@
       "source": "llm_provider_llm",
       "target": "llm_provider_llm_generatetext",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/commands/vision-fallback.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "llm_provider_llm_generatetext",
+      "_tgt": "commands_vision_fallback_visionfallback",
+      "source": "llm_provider_llm_generatetext",
+      "target": "commands_vision_fallback_visionfallback"
     },
     {
       "relation": "imports_from",
@@ -4788,10 +5073,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "src/ipc/dispatch.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "src_ipc_dispatch_ts",
+      "_tgt": "src_detectors_macos_ax_bridge_ts",
+      "source": "src_ipc_dispatch_ts",
+      "target": "src_detectors_macos_ax_bridge_ts",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0,
       "_src": "src_ipc_dispatch_ts",
       "_tgt": "ipc_dispatch_dispatcher",
@@ -4803,7 +5100,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L294",
+      "source_location": "L365",
       "weight": 1.0,
       "_src": "src_ipc_dispatch_ts",
       "_tgt": "ipc_dispatch_parse",
@@ -4815,7 +5112,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher",
       "_tgt": "ipc_dispatch_dispatcher_dispatch",
@@ -4827,7 +5124,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher",
       "_tgt": "ipc_dispatch_dispatcher_invoke",
@@ -4839,7 +5136,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L230",
+      "source_location": "L301",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher",
       "_tgt": "ipc_dispatch_dispatcher_openpage",
@@ -4851,7 +5148,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L275",
+      "source_location": "L346",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher",
       "_tgt": "ipc_dispatch_dispatcher_closeall",
@@ -4863,7 +5160,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L287",
+      "source_location": "L358",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher",
       "_tgt": "ipc_dispatch_dispatcher_requirehandle",
@@ -4875,7 +5172,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher_dispatch",
       "_tgt": "ipc_dispatch_dispatcher_invoke",
@@ -4887,7 +5184,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher_invoke",
       "_tgt": "ipc_dispatch_parse",
@@ -4899,7 +5196,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L74",
+      "source_location": "L75",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher_invoke",
       "_tgt": "ipc_dispatch_dispatcher_openpage",
@@ -4911,7 +5208,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L95",
+      "source_location": "L96",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher_invoke",
       "_tgt": "ipc_dispatch_dispatcher_requirehandle",
@@ -4923,7 +5220,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "src/ipc/dispatch.ts",
-      "source_location": "L222",
+      "source_location": "L223",
       "weight": 1.0,
       "_src": "ipc_dispatch_dispatcher_invoke",
       "_tgt": "ipc_dispatch_dispatcher_closeall",
@@ -4954,6 +5251,42 @@
       "_tgt": "replay_bundle_bundlesession",
       "source": "ipc_dispatch_dispatcher_invoke",
       "target": "replay_bundle_bundlesession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_commands_scan_screen_ts",
+      "_tgt": "commands_scan_screen_builder",
+      "source": "src_commands_scan_screen_ts",
+      "target": "commands_scan_screen_builder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "src_commands_scan_screen_ts",
+      "_tgt": "commands_scan_screen_handler",
+      "source": "src_commands_scan_screen_ts",
+      "target": "commands_scan_screen_handler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/commands/scan-screen.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "commands_scan_screen_handler",
+      "_tgt": "detectors_screen_classifier_createclassifier",
+      "source": "commands_scan_screen_handler",
+      "target": "detectors_screen_classifier_createclassifier"
     },
     {
       "relation": "contains",
@@ -5241,6 +5574,486 @@
       "_tgt": "replay_bundle_sessionartifactpaths",
       "source": "src_replay_bundle_ts",
       "target": "replay_bundle_sessionartifactpaths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "src_detectors_screen_classifier_ts",
+      "_tgt": "detectors_screen_classifier_run_applescript",
+      "source": "src_detectors_screen_classifier_ts",
+      "target": "detectors_screen_classifier_run_applescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "src_detectors_screen_classifier_ts",
+      "_tgt": "detectors_screen_classifier_screenclassifier",
+      "source": "src_detectors_screen_classifier_ts",
+      "target": "detectors_screen_classifier_screenclassifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L269",
+      "weight": 1.0,
+      "_src": "src_detectors_screen_classifier_ts",
+      "_tgt": "detectors_screen_classifier_createclassifier",
+      "source": "src_detectors_screen_classifier_ts",
+      "target": "detectors_screen_classifier_createclassifier",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_classify",
+      "_tgt": "detectors_screen_classifier_run_applescript",
+      "source": "detectors_screen_classifier_run_applescript",
+      "target": "detectors_screen_classifier_screenclassifier_classify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "_tgt": "detectors_screen_classifier_run_applescript",
+      "source": "detectors_screen_classifier_run_applescript",
+      "target": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_constructor",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classify",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_classify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classifybrowserwindow",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_classifybrowserwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_parserawwindows",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_parserawwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L242",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_isincognito",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_isincognito",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L251",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_detectactivetab",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_detectactivetab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L259",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_detectpopup",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_detectpopup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier",
+      "_tgt": "detectors_screen_classifier_screenclassifier_listallwindows",
+      "source": "detectors_screen_classifier_screenclassifier",
+      "target": "detectors_screen_classifier_screenclassifier_listallwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_classify",
+      "_tgt": "detectors_screen_classifier_screenclassifier_parserawwindows",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_parserawwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_classify",
+      "_tgt": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_getaxrole",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_classify",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classifybrowserwindow",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_classifybrowserwindow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_classify",
+      "_tgt": "detectors_screen_classifier_screenclassifier_isincognito",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_isincognito",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L252",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_detectactivetab",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classify",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_detectactivetab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L260",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_detectpopup",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classify",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_detectpopup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/screen-classifier.ts",
+      "source_location": "L265",
+      "weight": 1.0,
+      "_src": "detectors_screen_classifier_screenclassifier_listallwindows",
+      "_tgt": "detectors_screen_classifier_screenclassifier_classify",
+      "source": "detectors_screen_classifier_screenclassifier_classify",
+      "target": "detectors_screen_classifier_screenclassifier_listallwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_src": "src_detectors_macos_ax_bridge_ts",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge",
+      "source": "src_detectors_macos_ax_bridge_ts",
+      "target": "detectors_macos_ax_bridge_macosaxbridge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_constructor",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_getelements",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_getelements",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_findtext",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_findtext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_clickelement",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_clickelement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_setvalue",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_setvalue",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_screenshotlabeled",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_screenshotlabeled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_filterwindows",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_filterwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_getwindowsbypid",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_getwindowsbypid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_filterwindows",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_filterwindows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_getwindowsbypid",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_listwindows",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_getwindowsbypid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_getelements",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_getelements",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_findtext",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_findtext",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_clickelement",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_clickelement",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L99",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_setvalue",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_setvalue",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/detectors/macos-ax-bridge.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_src": "detectors_macos_ax_bridge_macosaxbridge_screenshotlabeled",
+      "_tgt": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
+      "source": "detectors_macos_ax_bridge_macosaxbridge_screenshotlabeled",
+      "target": "detectors_macos_ax_bridge_macosaxbridge_runaxcommand",
       "confidence_score": 1.0
     },
     {
