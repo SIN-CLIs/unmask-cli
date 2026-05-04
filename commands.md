@@ -146,7 +146,7 @@ unmask doctor
 # → Node version, Playwright, LLM API key, home-dir writable?
 ```
 
-## Integration mit Stealth-Quad
+## Integration mit Stealth Suite
 
 ```bash
 # 1. playstealth startet Chrome (CDP-Endpoint verfügbar)

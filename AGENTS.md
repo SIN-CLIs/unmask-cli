@@ -4,9 +4,9 @@
 Install: `npm install -g unmask-cli` | Start: `unmask serve --http`
 API: JSON-RPC 2.0. Methods: `dom.scan`, `console.list`, `network.list`
 
-## 🔗 Stealth-Quad
+## 🔗 Stealth Suite
 
-- **Orchestrator:** [stealth-runner](https://github.com/OpenSIN-AI/stealth-runner)
+- **Orchestrator:** [stealth-runner](https://github.com/SIN-CLIs/stealth-runner)
 - **HIDE:** [playstealth-cli](https://github.com/SIN-CLIs/playstealth-cli)
 - **ACT:** [skylight-cli](https://github.com/SIN-CLIs/skylight-cli)
 - **VERIFY:** [screen-follow](https://github.com/SIN-CLIs/screen-follow)
