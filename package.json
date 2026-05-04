@@ -1,6 +1,6 @@
 {
   "name": "unmask-cli",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "X-ray vision for web automation agents: CDP network sniffing, semantic DOM analysis, console listening, self-healing selectors and sequential queue processing.",
   "license": "MIT",
   "author": "SIN-CLIs",
